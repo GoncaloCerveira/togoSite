@@ -14,6 +14,7 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
     <title>TOGO PET Adoption</title>
 </head>
@@ -150,8 +151,14 @@
                     <h1>Create Account</h1>
                     <input type="text" placeholder="Name" />
                     <input type="email" placeholder="Email" />
-                    <input type="password" placeholder="Password" />
-                    <input type="password" placeholder="Confirm Password" /><br>
+                    <div style="display: flex; width: 100%;">
+                        <input id="password" type="password" placeholder="Password" />
+                        <i class="far fa-eye" id="togglePassword" style="margin-left: -35px; cursor: pointer; padding: 12px 15px; margin: 8px 0; background-color: #eee;"></i>
+                    </div>
+                    <div style="display: flex; width: 100%;">
+                        <input id="passwordC" type="password" placeholder="Confirm Password" /><br>
+                        <i class="far fa-eye" id="togglePasswordC" style="margin-left: -35px; cursor: pointer; padding: 12px 15px; margin: 8px 0; background-color: #eee;"></i>
+                    </div><br>
                     <button>Sign Up</button>
                 </form>
             </div>
@@ -159,8 +166,10 @@
                 <form action="#">
                     <h1>Sign in</h1>
                     <input type="email" placeholder="Email" />
-                    <input type="password" placeholder="Password" />
-                    <br>
+                    <div style="display: flex; width: 100%;">
+                        <input id="passwordL" type="password" placeholder="Password" />
+                        <i class="far fa-eye" id="togglePasswordL" style="margin-left: -35px; cursor: pointer; padding: 12px 15px; margin: 8px 0; background-color: #eee;"></i>
+                    </div><br>
                     <button>Sign In</button>
                 </form>
             </div>
@@ -222,5 +231,32 @@
         }
       });
     }
+
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+
+    togglePassword.addEventListener('click', function (e) {
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+    });
+
+    const togglePassword2 = document.querySelector('#togglePasswordC');
+    const password2 = document.querySelector('#passwordC');
+
+    togglePassword2.addEventListener('click', function (e) {
+        const type = password2.getAttribute('type') === 'password' ? 'text' : 'passwordC';
+        password2.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+    });
+
+    const togglePassword3 = document.querySelector('#togglePasswordL');
+    const password3 = document.querySelector('#passwordL');
+
+    togglePassword3.addEventListener('click', function (e) {
+        const type = password3.getAttribute('type') === 'password' ? 'text' : 'passwordL';
+        password3.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+    });
 </script>
 </html>
