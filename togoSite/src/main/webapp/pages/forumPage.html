@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>TOGO FORUM</title>
+</head>
+<body>
+<div class="container" id="outerbox">
+    <nav>
+        <div class="logo" style="cursor: pointer;" onclick="window.location.href = '/pages/mainPage.html'">TOGO<b>.</b></div>
+        <ul class="navItems">
+            <li><a style="cursor: pointer;" onclick="window.location.href = '/pages/mainPage.html'">Home</a></li>
+            <li><a style="cursor: pointer;" onclick="window.location.href = '/pages/adoptionPage.html'">Adoption</a></li>
+            <li><a style="cursor: pointer;" onclick="window.location.href = '/pages/servicesPage.html'">Services</a></li>
+            <li><a style="cursor: pointer;" onclick="window.location.href = '/pages/forumPage.html'">Forum</a></li>
+            <li class="login">
+                <button onclick="openPopup(); container.classList.remove('right-panel-active');">
+                    <span class="links_name">Login/Register</span>
+                </button>
+            </li>
+        </ul>
+    </nav>
+</div>
+<div class="last" style="justify-content: center; align-items: center; text-align: center;">
+    <br>
+    <span style="font-weight: 700; font-size: 20px; color: rgb(221, 218, 208); cursor: pointer;" onclick="window.open('https://startupipm.web.app/', '_blank');"
+    >©ARTEMIS2023</span>
+</div>
+
+
+<!-- Where the POPUP is!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+<div class="popup" id="popup">
+    <div class="container" id="container">
+        <div class="top-right-button" onclick="closePopup()">X</div>
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <h1>Create Account</h1>
+                <input type="text" placeholder="Name" />
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <input type="password" placeholder="Confirm Password" /><br>
+                <button>Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Sign in</h1>
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <br>
+                <button>Sign In</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Don't have an account?<br>Enter your personal details and start journey with us</p>
+                    <button class="ghost" id="signUp">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Where the POPUP is!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+</body>
+
+<script>
+    let popup = document.getElementById("popup");
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+
+    signUpButton.addEventListener('click', () => {
+	    container.classList.add("right-panel-active");
+    });
+
+    signInButton.addEventListener('click', () => {
+	    container.classList.remove("right-panel-active");
+    });
+
+    function openPopup() {
+        popup.classList.toggle("open-popup");
+    }
+
+    function closePopup() {
+        popup.classList.remove("open-popup");
+    }
+</script>
+</html>
