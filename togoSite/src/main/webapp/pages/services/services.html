@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Listing Page</title>
+  <link rel="stylesheet" href="services.css" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../login.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- Where the POPUP is!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+<div class="popup" id="popup">
+  <div class="container" id="container">
+    <div class="top-right-button" onclick="closePopup()">X</div>
+    <div class="form-container sign-up-container">
+      <form action="#">
+        <h1>Create Account</h1>
+        <input type="text" placeholder="Name" />
+        <input type="email" placeholder="Email" />
+        <div style="display: flex; width: 100%;">
+          <input id="password" type="password" placeholder="Password" />
+          <i class="far fa-eye" id="togglePassword" style="margin-left: -35px; cursor: pointer; padding: 12px 15px; margin: 8px 0; background-color: #eee;"></i>
+        </div>
+        <div style="display: flex; width: 100%;">
+          <input id="passwordC" type="password" placeholder="Confirm Password" /><br>
+          <i class="far fa-eye" id="togglePasswordC" style="margin-left: -35px; cursor: pointer; padding: 12px 15px; margin: 8px 0; background-color: #eee;"></i>
+        </div><br>
+        <button>Sign Up</button>
+      </form>
+    </div>
+    <div class="form-container sign-in-container">
+      <form action="#">
+        <h1>Sign in</h1>
+        <input type="email" placeholder="Email" />
+        <div style="display: flex; width: 100%;">
+          <input id="passwordL" type="password" placeholder="Password" />
+          <i class="far fa-eye" id="togglePasswordL" style="margin-left: -35px; cursor: pointer; padding: 12px 15px; margin: 8px 0; background-color: #eee;"></i>
+        </div><br>
+        <button>Sign In</button>
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>Welcome Back!</h1>
+          <p>To keep connected with us please login with your personal info</p>
+          <button class="ghost" id="signIn">Sign In</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>Hello, Friend!</h1>
+          <p>Don't have an account?<br>Enter your personal details and start journey with us</p>
+          <button class="ghost" id="signUp">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Where the POPUP is!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+<nav>
+  <div class="logo" style="cursor: pointer;" onclick="window.location.href = '../pages/mainPage.html'">TOGO<b>.</b></div>
+  <ul class="navItems">
+    <li><a style="cursor: pointer;" onclick="window.location.href = '/pages/mainPage.html'">Home</a></li>
+    <li><a style="cursor: pointer;" onclick="window.location.href = '/pages/adoptionPage.html'">Adoption</a></li>
+    <li><a style="cursor: pointer;" onclick="window.location.href = '/pages/servicesPage.html'">Services</a></li>
+    <li><a style="cursor: pointer;" onclick="window.location.href = '/pages/forumPage.html'">Forum</a></li>
+    <li class="login">
+      <button onclick="openPopup(); container.classList.remove('right-panel-active');">
+        <span class="links_name">Login/Register</span>
+      </button>
+    </li>
+  </ul>
+</nav>
+
+  <h2 class="services-header" style="margin-left:5%; margin-top: 2%;">Services</h2>
+  <div class="main-content" style="padding: 0% 4% 4% 4%;">
+
+  <div class="services">
+    <div class="service-item" data-price="10/ day" data-animals="cats,dogs" data-location="north">
+      <div class="service-details">
+        <h3>Pet sitting</h3>
+        <p style="padding: 15px 10px 15px 10px; width: 80%; margin-left: 5%;"> Hello I'm Jack and I´m here to pet sit your animal, I have 10+ years experience taking care of dogs and cats, I have a vet assistant license</p>
+        <a class="animals"><i class="fas fa-paw"></i>Cats, Dogs</a> &emsp;
+        <a class="price"><i class="fas fa-tag"></i>$10/day</a> &emsp;
+        <a class="location"><i class="fas fa-map-marker-alt"></i>North</a>
+      </div>
+      <div class="service-image">
+        <img src="https://skateparkoftampa.com/spot/headshots/5291.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="service-item" data-price="15/ hour" data-animals="dogs" data-location="south">
+      <div class="service-details">
+        <h3>Pet walking</h3>
+        <p style="padding: 15px 10px 15px 10px; width: 80%; margin-left: 5%;"> Hello I'm Michael and I´m here to pet walk your animal, I don't get tired easily and I can run the distance</p>
+        <a class="animals"><i class="fas fa-paw"></i>Dogs</a> &emsp;
+        <a class="price"><i class="fas fa-tag"></i>$15/hour</a> &emsp;
+        <a class="location"><i class="fas fa-map-marker-alt"></i>South</a>
+      </div>
+      <div class="service-image">
+        <img src="https://br.web.img3.acsta.net/c_310_420/pictures/18/09/19/22/37/5221873.jpg" alt="Leash Icon">
+      </div>
+    </div>
+
+    <div class="service-item" data-price="8/ hour" data-animals="dogs" data-location="west">
+      <div class="service-details">
+        <h3>Pet walking</h3>
+        <p style="padding: 15px 10px 15px 10px; width: 80%; margin-left: 5%;"> Hello I'm Rachel and I´m here to pet walk your animal, I love long walks especially when I have a friend with me</p>
+        <a class="animals"><i class="fas fa-paw"></i>Dogs</a> &emsp;
+        <a class="price"><i class="fas fa-tag"></i>$8/hour</a> &emsp;
+        <a class="location"><i class="fas fa-map-marker-alt"></i>West</a>
+      </div>
+      <div class="service-image">
+        <img src="https://f.i.uol.com.br/fotografia/2023/09/14/169470220565031a7d26e9f_1694702205_3x4_md.jpg" alt="Grooming Icon">
+      </div>
+    </div>
+
+    <div class="service-item" data-price="30/ day" data-animals="reptile,bird" data-location="north">
+      <div class="service-details">
+        <h3>Pet sitting</h3>
+        <p style="padding: 15px 10px 15px 10px; width: 80%; margin-left: 5%;"> Hello I'm Albertino and I´m here to pet sit your animal, I have 40+ years of experience with exotic animals and I also have 30+ different types of birds ate my house</p>
+        <a class="animals"><i class="fas fa-paw"></i>Reptile, Bird</a> &emsp;
+        <a class="price"><i class="fas fa-tag"></i>$30/day</a> &emsp;
+        <a class="location"><i class="fas fa-map-marker-alt"></i>North</a>
+      </div>
+      <div class="service-image">
+        <img src="https://jornaldasoficinas.com/pt/wp-content/uploads/2020/02/albertino-santosgruposotinar.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="service-item" data-price="5/ day" data-animals="cats" data-location="north">
+      <div class="service-details">
+        <h3>Pet sitting</h3>
+        <p style="padding: 15px 10px 15px 10px; width: 80%; margin-left: 5%;"> Hello I'm Jessica and I´m here to pet sit your animal, I don´t have many years of experience but I love animals</p>
+        <a class="animals"><i class="fas fa-paw"></i>Cats</a> &emsp;
+        <a class="price"><i class="fas fa-tag"></i>$5/day</a> &emsp;
+        <a class="location"><i class="fas fa-map-marker-alt"></i>North</a>
+      </div>
+      <div class="service-image">
+        <img src="https://www.hiper.fm/wp-content/uploads/2021/06/nogueira-jessica-1200x900.jpg" alt="">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sidebar">
+    <div class="filters">
+      <h3>Location:</h3>
+      <select aria-label="label for the select" name="location" id="location">
+        <option value="any">Any</option>
+        <option value="north">North</option>
+        <option value="south">South</option>
+        <option value="east">East</option>
+        <option value="west">West</option>
+      </select>
+      <h3>Filters</h3>
+      <div class="filter-item">
+        <input type="radio" id="sort-asc" name="sort-price" value="asc">
+        <label for="sort-asc">Sort by price (ascending)</label>
+      </div>
+      <div class="filter-item">
+        <input type="radio" id="sort-desc" name="sort-price" value="desc">
+        <label for="sort-desc">Sort by price (descending)</label>
+      </div>
+      <div class="filter-item">
+        <input type="checkbox" id="bird" name="animal" value="bird">
+        <label for="bird">Bird</label>
+      </div>
+      <div class="filter-item">
+        <input type="checkbox" id="dog" name="animal" value="dog">
+        <label for="dog">Dog</label>
+      </div>
+      <div class="filter-item">
+        <input type="checkbox" id="cat" name="animal" value="cat">
+        <label for="cat">Cat</label>
+      </div>
+      <div class="filter-item">
+        <input type="checkbox" id="reptile" name="animal" value="reptile">
+        <label for="reptile">Reptile</label>
+      </div>
+      <div class="filter-item">
+        <input type="checkbox" id="filter-pet-sitting" name="service" value="pet-sitting">
+        <label for="filter-pet-sitting">Pet Sitting</label>
+      </div>
+      <div class="filter-item">
+        <input type="checkbox" id="filter-pet-walking" name="service" value="pet-walking">
+        <label for="filter-pet-walking">Pet Walking</label>
+      </div>
+      <button class="post-service-btn" id = "post-service-btn" type="button" style="margin-top: 10%; width: 70%; margin-left: 15%;">Create a Service</button>
+    </div>
+    <div style="margin-bottom: 55%;">
+  </div>
+</div>
+</div>
+<div class="last" style="justify-content: center; align-items: center; text-align: center;">
+  <br>
+  <span style="font-weight: 700; font-size: 20px; color: rgb(221, 218, 208); cursor: pointer;" onclick="window.open('https://startupipm.web.app/', '_blank');"
+  >©ARTEMIS2023</span>
+</div>
+
+</body>
+
+<script>
+    // This function would be called whenever the dog checkbox is toggled
+    function filterServicesCat() {
+  var checkbox = document.getElementById('cat');
+  var services = document.querySelectorAll('.service-item');
+
+  services.forEach(function(service) {
+    var animals = service.querySelector('.animals').textContent;
+
+    if (checkbox.checked && animals.includes('Cat')) {
+      service.style.display = ''; // show the service
+    } else if (!checkbox.checked) {
+      service.style.display = ''; // show all services if checkbox is not checked
+    } else {
+      service.style.display = 'none'; // hide the service
+    }
+  });
+}
+function filterServicesDog() {
+  var checkbox = document.getElementById('dog');
+  var services = document.querySelectorAll('.service-item');
+
+  services.forEach(function(service) {
+    var animals = service.querySelector('.animals').textContent;
+
+    if (checkbox.checked && animals.includes('Dog')) {
+      service.style.display = ''; // show the service
+    } else if (!checkbox.checked) {
+      service.style.display = ''; // show all services if checkbox is not checked
+    } else {
+      service.style.display = 'none'; // hide the service
+    }
+  });
+}
+function filterServicesBird() {
+  var checkbox = document.getElementById('bird');
+  var services = document.querySelectorAll('.service-item');
+
+  services.forEach(function(service) {
+    var animals = service.querySelector('.animals').textContent;
+
+    if (checkbox.checked && animals.includes('Bird')) {
+      service.style.display = ''; // show the service
+    } else if (!checkbox.checked) {
+      service.style.display = ''; // show all services if checkbox is not checked
+    } else {
+      service.style.display = 'none'; // hide the service
+    }
+  });
+}
+function filterServicesReptile() {
+  var checkbox = document.getElementById('reptile');
+  var services = document.querySelectorAll('.service-item');
+
+  services.forEach(function(service) {
+    var animals = service.querySelector('.animals').textContent;
+
+    if (checkbox.checked && animals.includes('Reptile')) {
+      service.style.display = ''; // show the service
+    } else if (!checkbox.checked) {
+      service.style.display = ''; // show all services if checkbox is not checked
+    } else {
+      service.style.display = 'none'; // hide the service
+    }
+  });
+}
+
+
+function filterServicesByLocation() {
+  const selectedLocation = document.getElementById('location').value;
+  const services = document.querySelectorAll('.service-item');
+
+  services.forEach(service => {
+    const serviceLocation = service.getAttribute('data-location');
+    if (selectedLocation === 'any' || serviceLocation === selectedLocation) {
+      service.style.display = ''; // Show
+    } else {
+      service.style.display = 'none'; // Hide
+    }
+  });
+}
+function filterServicesByType() {
+  var filterSitting = document.getElementById('filter-pet-sitting').checked;
+  var filterWalking = document.getElementById('filter-pet-walking').checked;
+  var services = document.getElementsByClassName('service-item');
+
+  for (var i = 0; i < services.length; i++) {
+    var service = services[i];
+    var isSittingService = service.textContent.toLowerCase().includes('sitting');
+    var isWalkingService = service.textContent.toLowerCase().includes('walking');
+
+    // Determine if the service should be displayed based on the filters
+    if ((filterSitting && isSittingService) || (filterWalking && isWalkingService) || (!filterSitting && !filterWalking)) {
+      service.style.display = '';
+    } else {
+      service.style.display = 'none';
+    }
+  }
+}
+function sortServicesByPrice( ascending = true) {
+  const servicesContainer = document.querySelector('.services');
+  const services = Array.from(servicesContainer.getElementsByClassName('service-item'));
+
+  services.sort((a, b) => {
+    // Extract price values from data-price attribute
+    const priceA = parseFloat(a.getAttribute('data-price').split('/')[0]);
+    const priceB = parseFloat(b.getAttribute('data-price').split('/')[0]);
+
+   return ascending ?  priceA - priceB: -1 * (priceA - priceB); // For ascending order
+  });
+
+  // Re-append sorted services to the container
+  services.forEach(service => servicesContainer.appendChild(service));
+}
+
+// Event listeners for sorting buttons
+document.getElementById('sort-asc').addEventListener('change', () => sortServicesByPrice(true));
+document.getElementById('sort-desc').addEventListener('change', () => sortServicesByPrice(false));
+
+
+// Event listeners for sorting buttons
+document.getElementById('sort-asc').addEventListener('change', () => sortServicesByPrice(true));
+document.getElementById('sort-desc').addEventListener('change', () => sortServicesByPrice(false));
+
+// Event listeners for sorting buttons
+document.getElementById('sort-asc').addEventListener('change', () => sortServicesByPrice(true));
+document.getElementById('sort-desc').addEventListener('change', () => sortServicesByPrice(false));
+
+document.getElementById('cat').addEventListener('change', filterServicesCat);
+document.getElementById('dog').addEventListener('change', filterServicesDog);
+document.getElementById('bird').addEventListener('change', filterServicesBird);
+document.getElementById('reptile').addEventListener('change', filterServicesReptile);
+document.getElementById('location').addEventListener('change', filterServicesByLocation);
+document.getElementById('filter-pet-sitting').addEventListener('change', filterServicesByType);
+document.getElementById('filter-pet-walking').addEventListener('change', filterServicesByType);
+
+  document.getElementById('post-service-btn').addEventListener('click', function() {
+    window.location.href = 'postService.html';
+  });
+
+  let popup = document.getElementById("popup");
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+
+    signUpButton.addEventListener('click', () => {
+	    container.classList.add("right-panel-active");
+    });
+
+    signInButton.addEventListener('click', () => {
+	    container.classList.remove("right-panel-active");
+    });
+
+    function openPopup() {
+        popup.classList.toggle("open-popup");
+    }
+
+    function closePopup() {
+        popup.classList.remove("open-popup");
+    }
+
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        this.parentElement.classList.toggle("active");
+
+        var pannel = this.nextElementSibling;
+
+        if (pannel.style.display === "block") {
+          pannel.style.display = "none";
+        } else {
+          pannel.style.display = "block";
+        }
+      });
+    }
+
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+
+    togglePassword.addEventListener('click', function (e) {
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+    });
+
+    const togglePassword2 = document.querySelector('#togglePasswordC');
+    const password2 = document.querySelector('#passwordC');
+
+    togglePassword2.addEventListener('click', function (e) {
+        const type = password2.getAttribute('type') === 'password' ? 'text' : 'passwordC';
+        password2.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+    });
+
+    const togglePassword3 = document.querySelector('#togglePasswordL');
+    const password3 = document.querySelector('#passwordL');
+
+    togglePassword3.addEventListener('click', function (e) {
+        const type = password3.getAttribute('type') === 'password' ? 'text' : 'passwordL';
+        password3.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+    });
+
+</script>
+</html>

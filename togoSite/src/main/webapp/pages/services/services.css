@@ -1,0 +1,107 @@
+body {
+  background-color: #fff3e0; /* Light orange/peach background for the body */
+  color: #5a5a5a; /* Darker text for contrast */
+  margin: 0;
+
+  font-family: "poppins", sans-serif;
+}
+
+.main-content {
+  margin-top: 10px;
+  display: flex;
+  padding: 10px;
+  align-items: stretch;
+}
+
+.services,
+.sidebar {
+  display: flex;
+  flex-direction: column;
+}
+.filters {
+  background-color: #e4e9f7;
+  border: 2px solid #000000;
+  padding: 1em;
+  box-sizing: border-box;
+  flex-grow: 1;
+}
+.services-header {
+  font-size: 30px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding-left: 15px;
+}
+
+.services {
+  height: 800px;
+  background-color: #e4e9f7;
+  box-sizing: border-box;
+  width: 70%;
+  margin-right: 10px;
+  overflow-y: auto;
+}
+.service-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #f2f2f2; /* Light grey background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+.service-details i {
+  margin-right: 0.5em; /* Space between icon and text */
+  color: #6c757d; /* Icon color */
+}
+
+.service-details {
+  flex-grow: 8; /* Increase the grow factor to push the image more to the left */
+}
+
+.service-image {
+  flex-grow: 1; /* You can adjust this grow factor to control the space the image takes */
+}
+
+.service-image img {
+  margin-right: 20px;
+  width: 150px; /* Control the width of the image */
+  height: 150px; /* Control the height of the image */
+  object-fit: cover; /* This will ensure the image covers the area without losing aspect ratio */
+}
+
+.sidebar {
+  margin-left: 5%;
+  margin-top: 2%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Align sidebar content to the right */
+}
+
+.post-service-btn {
+  padding: 20px 20px; /* Increase vertical padding to make the button taller */
+  background-color: #36505f; /* Keep your existing background color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%; /* Keep the button full width */
+  box-sizing: border-box;
+  margin-bottom: 20px; /* Keep your existing bottom margin */
+}
+
+.filters {
+  width: 100%;
+  flex-grow: 1; /* You might not need it to grow, setting it to 0 will make it only as tall as its content */
+  padding: 10px; /* Adjust padding as needed, smaller values will decrease height */
+  border: 2px solid #000000;
+  box-sizing: border-box;
+}
+.filter-item {
+  margin-bottom: 10px;
+}
