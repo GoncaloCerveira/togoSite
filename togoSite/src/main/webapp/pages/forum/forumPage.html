@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../login.css">
+    <link rel="stylesheet" href="forum.css">
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <title>TOGO Forum</title>
+</head>
+<body>
+<div class="container" style="background-color: white;">
+    <nav>
+        <div class="logo" style="cursor: pointer;" onclick="window.location.href = '/pages/mainPage.html'">TOGO<b>.</b></div>
+        <ul class="navItems">
+            <li><a style="cursor: pointer;" onclick="window.location.href = '/pages/mainPage.html'">Home</a></li>
+            <li><a style="cursor: pointer;" onclick="window.location.href = '/pages/adoptionPage.html'">Adoption</a></li>
+            <li><a style="cursor: pointer;" onclick="window.location.href = '/pages/servicesPage.html'">Services</a></li>
+            <li><a style="cursor: pointer;" onclick="window.location.href = '/pages/forumPage.html'">Forum</a></li>
+            <li class="login">
+                <button onclick="openPopup(); container.classList.remove('right-panel-active');">
+                    <span class="links_name">Login/Register</span>
+                </button>
+            </li>
+        </ul>
+    </nav>
+</div><br>
+<div style="background-color: white;">
+    <div class="sidebar open">
+        <div class="logo-details">
+            <i class='bx bx-conversation'></i>
+            <span class="logo_name">FORUM</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#">Category</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class='bx bx-collection' ></i>
+                        <span class="link_name">Category</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu" style="display: block;">
+                    <li><a class="link_name" href="#">Category</a></li>
+                    <li><a href="#adoption" style="font-size: 18px; margin-top: 5px; margin-left: 2px;" onClick="changeWindow('adopt', 'tS', 'aT', 'h', 'br', 'pH', 'pS', 'qA', 'pA');">Adoption</a></li>
+                    <li><a href="#breed" style="font-size: 18px; margin-top: 5px; margin-left: 2px;" onClick="changeWindow('br', 'tS', 'aT', 'adopt', 'h', 'pH', 'pS', 'qA', 'pA');">Breed</a></li>
+                    <li><a href="#health" style="font-size: 18px; margin-top: 5px; margin-left: 2px;" onClick="changeWindow('pH', 'tS', 'aT', 'adopt', 'br', 'h', 'pS', 'qA', 'pA');">PET Health</a></li>
+                    <li><a href="#advice" style="font-size: 18px; margin-top: 5px; margin-left: 2px;" onClick="changeWindow('pA', 'tS', 'aT', 'adopt', 'br', 'pH', 'pS', 'qA', 'h');">PET Advice</a></li>
+                    <li><a href="#services" style="font-size: 18px; margin-top: 5px; margin-left: 2px;" onClick="changeWindow('pS', 'tS', 'aT', 'adopt', 'br', 'pH', 'h', 'qA', 'pA');">PET Services</a></li>
+                    <li><a href="#q&a" style="font-size: 18px; margin-top: 5px; margin-left: 2px;" onClick="changeWindow('qA', 'tS', 'aT', 'adopt', 'br', 'pH', 'pS', 'h', 'pA');">Random Q&As</a></li>
+                </ul>
+            </li>
+            <br><br>
+            <hr style="width: 80%; height:2px; color:gray;background-color:white; margin: 0 auto;">
+            <br><br>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class='bx bx-book-alt' ></i>
+                        <span class="link_name">Resources</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow' ></i>
+                </div>
+                <ul class="sub-menu" style="display: block;">
+                    <li><a class="link_name" href="#">Resources</a></li>
+                    <li><a href="#aboutTogo" style="font-size: 18px; margin-top: 5px; margin-left: 2px;" onClick="changeWindow('aT', 'tS', 'h', 'adopt', 'br', 'pH', 'pS', 'qA', 'pA');">About TOGO</a></li>
+                    <li><a href="#termServices" style="font-size: 18px; margin-top: 5px; margin-left: 2px;" onClick="changeWindow('tS', 'aT', 'h', 'adopt', 'br', 'pH', 'pS', 'qA', 'pA');">Terms of Service</a></li>
+                    <li><a href="#help" style="font-size: 18px; margin-top: 5px; margin-left: 2px;" onClick="changeWindow('h', 'tS', 'aT', 'adopt', 'br', 'pH', 'pS', 'qA', 'pA');">HELP</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- ADOPT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+    <section id="adopt" class="home-section" style="display: block;">
+        <div class="home-content">
+            <div style="display: flex; width: 100%;">
+                    <i class='bx bx-menu' ></i>
+                    <span class="text">Adoption</span>
+            </div>
+        </div>
+        <hr style="width: 95%; height:4px; color: #11101d; background-color: #11101d; margin: 0 auto;">
+        <div class="chatForum">
+            <div class="left-sideA" style="height: 450%; border: 2px solid black; margin-left: 1%;">
+                <h2 style="font-weight: 600; font-size: 35px; color:#f3f5f8; margin-left: 2%;">Life is better with a Best Friend. Adopt.</h2>
+                <br>
+                <div class="text-area">
+                    <p style="font-size: 20px; color:#f3f5f8; margin-left: 2%;">
+                        The best platform to make your choice and understand everything about adopting your own pet
+                    </p>
+                </div>
+            </div>
+            <div class="right-sideA">
+                <section class="articles" style="padding: 15%; margin-top: 75%;">
+                    <article>
+                        <div class="article-wrapper">
+                            <figure>
+                                <img src="https://img.freepik.com/premium-vector/adopt-pet-concept_23-2148517279.jpg" alt=""/>
+                            </figure>
+                            <div class="article-body">
+                                <h2>Adoption Forum</h2>
+                                <p>
+                                    All things Adoption Related.<br>
+                                    For people who are thinking about adopting or even people who already have an adopted animal and need help or have questions/answers to share!!
+                                </p>
+                            </div>
+                            <div style="text-align: center;">
+                                <button onclick="">Post on the Forum</button>
+                            </div>
+                            <br><br>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </section>
+    <!-- END ADOPT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+    <!-- Breed!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+    <section id="br" class="home-section" style="display: none;">
+        <div class="home-content">
+            <div style="display: flex; width: 100%;">
+                <i class='bx bx-menu' ></i>
+                <span class="text">Breed</span>
+            </div>
+        </div>
+        <div class="chatForum">
+            <div class="left-side">
+                <h2 style="font-weight: 600; font-size: 35px; color:#f3f5f8; margin-left: 2%;">Life is better with a Best Friend. Adopt.</h2>
+                <br>
+                <div class="text-area">
+                    <p style="font-size: 20px; color:#f3f5f8; margin-left: 2%;">
+                        The best platform to make your choice and understand everything about adopting your own pet
+                    </p>
+                </div>
+            </div>
+            <div class="right-side" style="text-align: right;">
+                <p>Ola</p>
+            </div>
+        </div>
+    </section>
+    <!-- END Breed!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+    <!-- PetHealth!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+    <section id="pH" class="home-section" style="display: none;">
+        <div class="home-content">
+            <div style="display: flex; width: 100%;">
+                <i class='bx bx-menu' ></i>
+                <span class="text">PET Health</span>
+            </div>
+        </div>
+        <div class="chatForum">
+            <div class="left-side">
+                <h2 style="font-weight: 600; font-size: 35px; color:#f3f5f8; margin-left: 2%;">Life is better with a Best Friend. Adopt.</h2>
+                <br>
+                <div class="text-area">
+                    <p style="font-size: 20px; color:#f3f5f8; margin-left: 2%;">
+                        The best platform to make your choice and understand everything about adopting your own pet
+                    </p>
+                </div>
+            </div>
+            <div class="right-side" style="text-align: right;">
+                <p>Ola</p>
+            </div>
+        </div>
+    </section>
+    <!-- END PetHealth!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+    <!-- PetAdvice!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+    <section id="pA" class="home-section" style="display: none;">
+        <div class="home-content">
+            <div style="display: flex; width: 100%;">
+                <i class='bx bx-menu' ></i>
+                <span class="text">PET Advice</span>
+            </div>
+        </div>
+        <div class="chatForum">
+            <div class="left-side">
+                <h2 style="font-weight: 600; font-size: 35px; color:#f3f5f8; margin-left: 2%;">Life is better with a Best Friend. Adopt.</h2>
+                <br>
+                <div class="text-area">
+                    <p style="font-size: 20px; color:#f3f5f8; margin-left: 2%;">
+                        The best platform to make your choice and understand everything about adopting your own pet
+                    </p>
+                </div>
+            </div>
+            <div class="right-side" style="text-align: right;">
+                <p>Ola</p>
+            </div>
+        </div>
+    </section>
+    <!-- END PETAdvice!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+    <!-- PETService!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+    <section id="pS" class="home-section" style="display: none;">
+        <div class="home-content">
+            <div style="display: flex; width: 100%;">
+                <i class='bx bx-menu' ></i>
+                <span class="text">PET Service</span>
+            </div>
+        </div>
+        <div class="chatForum">
+            <div class="left-side">
+                <h2 style="font-weight: 600; font-size: 35px; color:#f3f5f8; margin-left: 2%;">Life is better with a Best Friend. Adopt.</h2>
+                <br>
+                <div class="text-area">
+                    <p style="font-size: 20px; color:#f3f5f8; margin-left: 2%;">
+                        The best platform to make your choice and understand everything about adopting your own pet
+                    </p>
+                </div>
+            </div>
+            <div class="right-side" style="text-align: right;">
+                <p>Ola</p>
+            </div>
+        </div>
+    </section>
+    <!-- END PETService!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+    <!-- Q&A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+    <section id="qA" class="home-section" style="display: none;">
+        <div class="home-content">
+            <div style="display: flex; width: 100%;">
+                <i class='bx bx-menu' ></i>
+                <span class="text">Random Q&As</span>
+            </div>
+        </div>
+        <div class="chatForum">
+            <div class="left-side">
+                <h2 style="font-weight: 600; font-size: 35px; color:#f3f5f8; margin-left: 2%;">Life is better with a Best Friend. Adopt.</h2>
+                <br>
+                <div class="text-area">
+                    <p style="font-size: 20px; color:#f3f5f8; margin-left: 2%;">
+                        The best platform to make your choice and understand everything about adopting your own pet
+                    </p>
+                </div>
+            </div>
+            <div class="right-side" style="text-align: right;">
+                <p>Ola</p>
+            </div>
+        </div>
+    </section>
+    <!-- END Q&A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+    <!-- AboutTOGO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+    <section id="aT" class="home-section" style="display: none;">
+        <div class="home-content">
+            <div style="display: flex; width: 100%;">
+                <i class='bx bx-menu' ></i>
+                <span class="text">About TOGO</span>
+            </div>
+        </div>
+        <div class="chatForum">
+            <div class="left-side">
+                <h2 style="font-weight: 600; font-size: 35px; color:#f3f5f8; margin-left: 2%;">Life is better with a Best Friend. Adopt.</h2>
+                <br>
+                <div class="text-area">
+                    <p style="font-size: 20px; color:#f3f5f8; margin-left: 2%;">
+                        The best platform to make your choice and understand everything about adopting your own pet
+                    </p>
+                </div>
+            </div>
+            <div class="right-side" style="text-align: right;">
+                <p>Ola</p>
+            </div>
+        </div>
+    </section>
+    <!-- END AboutTOGO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+    <!-- TermsService!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+    <section id="tS" class="home-section" style="display: none;">
+        <div class="home-content">
+            <div style="display: flex; width: 100%;">
+                <i class='bx bx-menu' ></i>
+                <span class="text">Terms Of Service</span>
+            </div>
+        </div>
+        <div class="chatForum">
+            <div class="left-side">
+                <h2 style="font-weight: 600; font-size: 35px; color:#f3f5f8; margin-left: 2%;">Life is better with a Best Friend. Adopt.</h2>
+                <br>
+                <div class="text-area">
+                    <p style="font-size: 20px; color:#f3f5f8; margin-left: 2%;">
+                        The best platform to make your choice and understand everything about adopting your own pet
+                    </p>
+                </div>
+            </div>
+            <div class="right-side" style="text-align: right;">
+                <p>Ola</p>
+            </div>
+        </div>
+    </section>
+    <!-- END TermsService!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+    <!-- Help!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+    <section id="h" class="home-section" style="display: none;">
+        <div class="home-content">
+            <div style="display: flex; width: 100%;">
+                <i class='bx bx-menu' ></i>
+                <span class="text">HELP</span>
+            </div>
+        </div>
+        <div class="chatForum">
+            <div class="left-side">
+                <h2 style="font-weight: 600; font-size: 35px; color:#f3f5f8; margin-left: 2%;">Life is better with a Best Friend. Adopt.</h2>
+                <br>
+                <div class="text-area">
+                    <p style="font-size: 20px; color:#f3f5f8; margin-left: 2%;">
+                        The best platform to make your choice and understand everything about adopting your own pet
+                    </p>
+                </div>
+            </div>
+            <div class="right-side" style="text-align: right;">
+                <p>Ola</p>
+            </div>
+        </div>
+    </section>
+    <!-- END HELP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+</div>
+
+<!-- Where the POPUP is!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+<div class="popup" id="popup">
+    <div class="container" id="container">
+        <div class="top-right-button" onclick="closePopup()">X</div>
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <h1>Create Account</h1>
+                <input type="text" placeholder="Name" />
+                <input type="email" placeholder="Email" />
+                <div style="display: flex; width: 100%;">
+                    <input id="password" type="password" placeholder="Password" />
+                    <i class="far fa-eye" id="togglePassword" style="margin-left: -35px; cursor: pointer; padding: 12px 15px; margin: 8px 0; background-color: #eee;"></i>
+                </div>
+                <div style="display: flex; width: 100%;">
+                    <input id="passwordC" type="password" placeholder="Confirm Password" /><br>
+                    <i class="far fa-eye" id="togglePasswordC" style="margin-left: -35px; cursor: pointer; padding: 12px 15px; margin: 8px 0; background-color: #eee;"></i>
+                </div><br>
+                <button>Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Sign in</h1>
+                <input type="email" placeholder="Email" />
+                <div style="display: flex; width: 100%;">
+                    <input id="passwordL" type="password" placeholder="Password" />
+                    <i class="far fa-eye" id="togglePasswordL" style="margin-left: -35px; cursor: pointer; padding: 12px 15px; margin: 8px 0; background-color: #eee;"></i>
+                </div><br>
+                <button>Sign In</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Don't have an account?<br>Enter your personal details and start journey with us</p>
+                    <button class="ghost" id="signUp">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Where the POPUP is!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+</body>
+
+<script>
+    let popup = document.getElementById("popup");
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+
+    signUpButton.addEventListener('click', () => {
+	    container.classList.add("right-panel-active");
+    });
+
+    signInButton.addEventListener('click', () => {
+	    container.classList.remove("right-panel-active");
+    });
+
+    function openPopup() {
+        popup.classList.toggle("open-popup");
+    }
+
+    function closePopup() {
+        popup.classList.remove("open-popup");
+    }
+
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+
+    togglePassword.addEventListener('click', function (e) {
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+    });
+
+    const togglePassword2 = document.querySelector('#togglePasswordC');
+    const password2 = document.querySelector('#passwordC');
+
+    togglePassword2.addEventListener('click', function (e) {
+        const type = password2.getAttribute('type') === 'password' ? 'text' : 'passwordC';
+        password2.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+    });
+
+    const togglePassword3 = document.querySelector('#togglePasswordL');
+    const password3 = document.querySelector('#passwordL');
+
+    togglePassword3.addEventListener('click', function (e) {
+        const type = password3.getAttribute('type') === 'password' ? 'text' : 'passwordL';
+        password3.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+    });
+
+    let arrow = document.querySelectorAll(".arrow");
+    for (var i = 0; i < arrow.length; i++) {
+        arrow[i].addEventListener("click", (e)=>{
+            let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+            arrowParent.classList.toggle("showMenu");
+        });
+    }
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".bx-menu");
+    console.log(sidebarBtn);
+    sidebarBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("close");
+    });
+
+    function changeWindow(div1, div2, div3, div4, div5, div6, div7, div8, div9){
+        var appear = document.getElementById(div1);
+        var gone1 = document.getElementById(div2);
+        var gone2 = document.getElementById(div3);
+        var gone3 = document.getElementById(div4);
+        var gone4 = document.getElementById(div5);
+        var gone5 = document.getElementById(div6);
+        var gone6 = document.getElementById(div7);
+        var gone7 = document.getElementById(div8);
+        var gone8 = document.getElementById(div9);
+
+        console.log(appear);
+
+        appear.style.display = 'block';
+        gone1.style.display = 'none';
+        gone2.style.display = 'none';
+        gone3.style.display = 'none';
+        gone4.style.display = 'none';
+        gone5.style.display = 'none';
+        gone6.style.display = 'none';
+        gone7.style.display = 'none';
+        gone8.style.display = 'none';
+      }
+</script>
+</html>
