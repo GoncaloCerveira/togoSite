@@ -1,41 +1,71 @@
-.filter-container label {
-    color: white;
+.adoptions {
+    background: #E4E9F7;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: auto;
+}
+
+.adoption-title {
+    position: relative;
+    top: 125px;
+    left: 100px;
 }
 
 .filter-container {
-    text-align: center;
-    margin-bottom: 20px;
-    padding: 10vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 0 100px 0 100px;
+    background-color: #fff;
+    border: none;
+    border-radius: 100px;
+    position: relative;
+    top: 150px;
 }
 
-.filter-dropdown {
-    padding: 8px;
-    font-size: 16px;
+.filter {
+    border: none;
+    padding: 10px;
+    width: 100%;
+    margin-right: 10px;
+    background-color: #fff;
+}
+
+.filter-button {
+    border: none;
+    padding: 10px;
+    width: 100%;
+    margin-right: 10px;
+    border-radius: 100px;
+    box-shadow: none;
 }
 
 .adoption-listings {
+    position: relative;
     list-style: none;
-    padding: 10vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    top: 120px;
+    padding: 80px;
 }
 
 .adoption-item {
-    width: 400px;
-    height: 500px;
-    margin: 10px;
+    width: 350px;
+    height: 450px;
+    margin: 25px 25px 25px 25px;
     padding: 20px;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
-    background-color: lightgray;
+    background-color: #fff;
 }
 
 .adoption-image {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
+    aspect-ratio: 16/9 ;
     border-radius: 50%;
     overflow: hidden;
 }
