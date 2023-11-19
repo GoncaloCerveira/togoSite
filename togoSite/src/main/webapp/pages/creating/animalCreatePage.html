@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../login.css" />
+  <link rel="icon" type="/image/png" href="images/icons/favicon.ico" />
+  <link
+          href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+          rel="stylesheet"
+  />
+  <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+  />
+  <title>Adoption Post</title>
+</head>
+<body>
+<div class="container" style="background-color: white">
+  <nav>
+    <div class="logo" style="cursor: pointer" onclick="window.location.href = '/pages/mainPage.html'">TOGO<b>.</b>
+    </div>
+    <ul class="navItems">
+      <li>
+        <a style="cursor: pointer" onclick="window.location.href = '/pages/mainPage.html'">Home</a>
+      </li>
+      <li>
+          <a style="cursor: pointer" onclick="window.location.href = '/pages/adoptionPage.html'">Adoption</a>
+      </li>
+      <li>
+          <a style="cursor: pointer" onclick="window.location.href = '/pages/servicesPage.html'">Services</a>
+      </li>
+      <li>
+          <a style="cursor: pointer" onclick="window.location.href = '/pages/forumPage.html'">Forum</a>
+      </li>
+      <li class="login">
+          <button onclick="openPopup(); container.classList.remove('right-panel-active');">
+          <span class="links_name">Login/Register</span>
+          </button>
+      </li>
+    </ul>
+  </nav>
+</div>
+<main id="main">
+  <section id="pet-details-form">
+    <form>
+      <div class="form-grid" style="width: 110%;">
+        <div class="details-container">
+          <div class="form-column">
+            <h2>Profile Details</h2>
+            <div class="form-group">
+              <label for="name">Name*</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender*</label>
+              <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="age">Age*</label>
+              <select id="age" name="age" required>
+                <option value="baby">Baby</option>
+                <option value="adult">Adult</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="size">Size*</label>
+              <select id="size" name="size" required>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="big">Big</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="species">Species*</label>
+              <select id="species" name="species" required>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="bird">Bird</option>
+                <option value="reptile">Reptile</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="breed">Breed*</label>
+              <input type="text" id="breed" name="breed" required />
+            </div>
+            <div class="form-group">
+              <label for="location">Location*</label>
+              <input type="text" id="location" name="location" required />
+            </div>
+          </div>
+          <div class="form-description">
+            <label for="description">Description</label>
+            <textarea
+                    id="description"
+                    name="description"
+                    oninput="updateWordCount()"
+                    maxlength="1000"
+            ></textarea>
+            <div id="wordCount" class="word-counter">0/800</div>
+          </div>
+        </div>
+        <div class="column" style="height: 100%;">
+          <div class="form-group photos-container" style="width: 240%; margin-left: 126%;">
+            <h2>Profile Pictures</h2>
+            <hr style="width: 80%; height:4px; color:gray;background-color:black; margin: 0 auto;">
+            <br>
+            <!-- Custom styled button for file input -->
+            <button type="button" onclick="document.getElementById('owner-pictures').click()">Browse Files</button>
+            <input type="file" id="owner-pictures" name="owner-pictures" multiple style="display: none"/>
+          </div>
+          <div class="form-group traits-container" style="width: 240%; margin-left: 126%; height: 42%;">
+            <h2>Pet Traits</h2>
+            <hr style="width: 80%; height:4px; color:gray;background-color:black; margin: 0 auto;">
+            <div class="traits-group" style="margin-top: 2px;">
+              <label for="energy">Energy</label>
+              <input type="range" id="energy" name="energy" min="1" max="5"/><br><br>
+              <label for="noise">Noise</label>
+              <input type="range" id="noise" name="noise" min="1" max="5" /><br><br>
+            </div>
+            <div class="traits-group">
+              <label for="playfulness">Playfulness</label>
+              <input type="range" id="playfulness" name="playfulness" min="1" max="5"/><br><br>
+              <label for="messiness">Messiness</label>
+              <input type="range" id="messiness" name="messiness" min="1" max="5"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <button type="reset" onclick="clearInputs(); resetWordCount();" style="margin-top: 2%;">Clear Changes</button>
+    <div style="margin-top: 2%; margin-left: 70%;">
+      <button type="submit" onclick="on();">Submit</button>
+    </div>
+  </section>
+  </form>
+  <br><br>
+  <div class="last" style="justify-content: center; align-items: center; text-align: center;">
+    <br>
+    <span style="font-weight: 700; font-size: 20px; color: rgb(221, 218, 208); cursor: pointer;" onclick="window.open('https://startupipm.web.app/', '_blank');"
+    >©ARTEMIS2023</span>
+  </div>
+</main>
+
+<!-- Where the POPUP is!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+<div class="popup" id="popup">
+  <div class="container" id="container">
+    <div class="top-right-button" onclick="closePopup()">X</div>
+    <div class="form-container sign-up-container">
+      <form action="#">
+        <h1>Create Account</h1>
+        <input type="text" placeholder="Name" />
+        <input type="email" placeholder="Email" />
+        <div style="display: flex; width: 100%">
+          <input id="password" type="password" placeholder="Password" />
+          <i
+                  class="far fa-eye"
+                  id="togglePassword"
+                  style="
+                  margin-left: -35px;
+                  cursor: pointer;
+                  padding: 12px 15px;
+                  margin: 8px 0;
+                  background-color: #eee;
+                "
+          ></i>
+        </div>
+        <div style="display: flex; width: 100%">
+          <input
+                  id="passwordC"
+                  type="password"
+                  placeholder="Confirm Password"
+          /><br />
+          <i
+                  class="far fa-eye"
+                  id="togglePasswordC"
+                  style="
+                  margin-left: -35px;
+                  cursor: pointer;
+                  padding: 12px 15px;
+                  margin: 8px 0;
+                  background-color: #eee;
+                "
+          ></i>
+        </div>
+        <br />
+        <button>Sign Up</button>
+      </form>
+    </div>
+    <div class="form-container sign-in-container">
+      <form action="#">
+        <h1>Sign in</h1>
+        <input type="email" placeholder="Email" />
+        <div style="display: flex; width: 100%">
+          <input id="passwordL" type="password" placeholder="Password" />
+          <i
+                  class="far fa-eye"
+                  id="togglePasswordL"
+                  style="
+                  margin-left: -35px;
+                  cursor: pointer;
+                  padding: 12px 15px;
+                  margin: 8px 0;
+                  background-color: #eee;
+                "
+          ></i>
+        </div>
+        <br />
+        <button>Sign In</button>
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>Welcome Back!</h1>
+          <p>
+            To keep connected with us please login with your personal info
+          </p>
+          <button class="ghost" id="signIn">Sign In</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>Hello, Friend!</h1>
+          <p>
+            Don't have an account?<br />Enter your personal details and
+            start journey with us
+          </p>
+          <button class="ghost" id="signUp">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Where the POPUP is!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+<div id="overlay" onclick="off()">
+  <div id="textover">
+    DEMO<br />This is only a prototype, so you can´t actualy put an animal for adoption<br />Sorry for the inconvenience
+  </div>
+</div>
+</body>
+</html>
+
+<script src="script.js"></script>

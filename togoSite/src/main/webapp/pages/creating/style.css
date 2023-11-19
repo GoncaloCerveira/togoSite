@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #e4e9f7;
+}
+
+.container {
+  width: 100%;
+}
+nav {
+  display: flex;
+  z-index: 100;
+  width: 100%;
+  justify-content: space-around;
+  height: 80px;
+  line-height: 80px;
+  background-color: #f3f5f8;
+  border-bottom: 1px solid #3d535f;
+}
+.logo {
+  display: flex;
+  font-size: 35px;
+  font-weight: 800;
+  color: #3d535f;
+  letter-spacing: 3px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+b {
+  font-size: 70px;
+  color: rgba(43, 140, 145, 0.445);
+}
+.navItems {
+  display: flex;
+}
+.navItems li {
+  list-style: none;
+  margin: 0 15px;
+}
+.navItems li a {
+  font-size: 25px;
+  color: #3d535f;
+  letter-spacing: 3px;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.navItems li:hover a,
+.links a:hover {
+  color: rgb(43, 140, 145);
+}
+.links a {
+  font-size: 30px;
+  color: #3d535f;
+  margin: 25px 10px;
+}
+
+button {
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+  background-color: #36505f;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.4);
+}
+button:hover {
+  color: black;
+  font-weight: 400;
+  background-color: rgba(74, 140, 171, 0.64);
+}
+
+.loginbtn {
+  box-shadow: none;
+}
+
+.cols {
+  width: 50%;
+}
+.cols0 {
+  width: 90%;
+  z-index: 5;
+}
+
+.homePage {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 80px);
+}
+
+.right-side {
+  flex: 1.25;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container2 {
+  height: 80px;
+  background-color: #f3f5f8;
+}
+
+.facts {
+  display: flex;
+  width: 100%;
+  height: calc(60vh - 80px);
+  background-color: rgb(221, 218, 208);
+}
+
+.facts2 {
+  align-items: center;
+  width: 100%;
+  height: calc(30vh - 80px);
+  background-color: rgb(221, 218, 208);
+  padding: 20px;
+}
+
+.facts21 {
+  margin-left: 18%;
+  align-items: center;
+  justify-content: center;
+  border-spacing: 30px;
+  display: table;
+  background-color: rgb(221, 218, 208);
+}
+
+.form {
+  background-color: white;
+  border-radius: 20px;
+  display: table-cell;
+}
+
+.last {
+  width: 100%;
+  height: 100px;
+  background-color: #1c2c34;
+}
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  cursor: pointer;
+}
+
+#textover {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.details-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  border: 2px solid #006666;
+  border-radius: 10px;
+  padding: 20px;
+  gap: 20px;
+}
+
+.column {
+  flex: 1; /* Takes up 1 fraction of the available space */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  padding: 20px;
+  margin-left: 10px; /* Adjust the left margin to create space */
+}
+
+.traits-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  border: 2px solid #006666;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.photos-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  border: 2px solid #006666;
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 20px;
+}
+
+#image-preview-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Space between images */
+  justify-content: center;
+}
+
+#image-preview-container img {
+  /* Styles for image previews */
+  width: 100px; /* Thumbnail size */
+  height: 100px; /* Thumbnail size */
+  object-fit: cover; /* To keep aspect ratio */
+  border-radius: 5px; /* Optional: if you want rounded corners on images */
+}
+
+.photos-container button {
+  /* Style your button here to match the design */
+  padding: 10px 20px;
+  background-color: #006666;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.photos-container button:hover {
+  background-color: #004747;
+}
+
+.traits-container h2 {
+  margin-bottom: 10px;
+}
+.traits-group {
+  text-align: center;
+  justify-content: center;
+  width: 100%; /* Adjust as needed, or use max-width for a maximum size */
+  gap: 10px;
+}
+
+/* Style the slider itself */
+.traits-container input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #ff8c00;
+  cursor: pointer;
+}
+
+.traits-container input[type='range']::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #ff8c00;
+  cursor: pointer;
+}
+
+#pet-details-form {
+  display: flex;
+  height: 85%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 20px;
+  width: auto;
+  max-width: 1300px;
+  padding: 20px;
+  background-color: #e4e9f7;
+  border: 2px solid #006666; /* Gray border */
+  border-radius: 10px;
+}
+
+#pet-details-form .form-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; /* This will distribute space around the items */
+  align-items: flex-start;
+  gap: 20px; /* You can adjust this gap for spacing */
+  text-align: center;
+}
+
+#pet-details-form .form-description {
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+#pet-details-form form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 200px;
+}
+
+#pet-details-form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 100%;
+}
+
+#pet-details-form .form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#pet-details-form .form-column {
+  gap: 100px;
+}
+
+#pet-details-form .form-group input[type='text'],
+#pet-details-form .form-group input[type='number'],
+#pet-details-form .form-group input[type='file'],
+#pet-details-form .form-group select,
+#pet-details-form .form-description textarea {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #006666;
+}
+
+#pet-details-form .form-description {
+  margin-top: 50px;
+}
+
+#pet-details-form .form-description textarea {
+  width: 400px; /* Ensure the width fills the container */
+  height: 80%; /* Fixed height */
+  resize: none; /* Disable resizing */
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 4px;
+  border: 1px solid #006666;
+  font-family: Arial, sans-serif;
+}
+
+.word-counter {
+  text-align: right;
+  color: #555;
+  margin-top: 5px; /* Small space between the counter and the textarea */
+}
+
+#pet-details-form .form-actions {
+  grid-column: 1 / -1; /* Span across all columns */
+  display: flex;
+  justify-content: space-between;
+}
+
+#pet-details-form .form-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #006666;
+  color: white;
+}
+
+.clear-form {
+  margin-right: 50px;
+}
+
+#pet-details-form .form-actions button:hover {
+  background-color: #004747;
+}
