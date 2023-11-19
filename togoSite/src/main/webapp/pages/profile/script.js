@@ -96,48 +96,6 @@ var slideIndex = 1;
       this.classList.toggle('fa-eye-slash');
     });
 
-    let arrow = document.querySelectorAll('.arrow');
-    for (var i = 0; i < arrow.length; i++) {
-      arrow[i].addEventListener('click', (e) => {
-        let arrowParent = e.target.parentElement.parentElement; //selecting main parent of arrow
-        arrowParent.classList.toggle('showMenu');
-      });
-    }
-
-    function changeWindow(
-      div1,
-      div2,
-      div3,
-      div4,
-      div5,
-      div6,
-      div7,
-      div8,
-      div9
-    ) {
-      var appear = document.getElementById(div1);
-      var gone1 = document.getElementById(div2);
-      var gone2 = document.getElementById(div3);
-      var gone3 = document.getElementById(div4);
-      var gone4 = document.getElementById(div5);
-      var gone5 = document.getElementById(div6);
-      var gone6 = document.getElementById(div7);
-      var gone7 = document.getElementById(div8);
-      var gone8 = document.getElementById(div9);
-
-      console.log(appear);
-
-      appear.style.display = 'block';
-      gone1.style.display = 'none';
-      gone2.style.display = 'none';
-      gone3.style.display = 'none';
-      gone4.style.display = 'none';
-      gone5.style.display = 'none';
-      gone6.style.display = 'none';
-      gone7.style.display = 'none';
-      gone8.style.display = 'none';
-    }
-
     function on() {
       document.getElementById('overlay').style.display = 'block';
     }
