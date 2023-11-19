@@ -132,6 +132,27 @@
     overflow: hidden;
 }
 
+.fas {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin: 20px;
+    left: 0;
+    overflow: hidden;
+    font-size: 40px;
+}
+
+.bx {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin: 20px;
+    right: 0;
+    overflow: hidden;
+    color: pink;
+    font-size: 50px;
+}
+
 .name {
     position: relative;
     top: 80px;
@@ -139,4 +160,22 @@
 
 .description {
     margin-top: 25%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.description p {
+    width: 50%;
+}
+
+.traits {
+    margin: 10px 0;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.traits label {
+    display: block;
+    margin: 5px 0;
 }

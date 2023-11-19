@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="adoption.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/5898ab3bb8.js" crossorigin="anonymous"></script>
     <title>Title</title>
 </head>
 <body>
@@ -37,8 +39,8 @@
             </select>
             <select id="gender-dropdown" class="filter">
                 <option value="all">Gender</option>
-                <option value="male">Dog</option>
-                <option value="female">Cat</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
             </select>
             <select id="age-dropdown" class="filter">
                 <option value="all">Age</option>
@@ -86,147 +88,252 @@
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <img src="../img/husky.jpg" alt="Image" class="adoption-image">
+                        <img src="../img/cat.jpeg" alt="Image" class="adoption-image">
                         <div class="adoption-description">
-                            <img src="../img/dog.png" alt="Image" class="pet-icon">
-                            <img src="../img/male.png" alt="Image" class="gender-icon">
-                            <h1 class="name">Name</h1>
-                            <p class="description">Nameawdawdawdawdawdawd</p>
+                            <i class='fas fa-cat'></i>
+                            <i class='bx bx-male-sign' style="color: dodgerblue"></i>
+                            <h1 class="name">Boots</h1>
+                            <div class="description">
+                                <p>Age : Adult</p>
+                                <p>Location : Lisboa</p>
+                                <p>Size : Medium</p>
+                                <p>Breed : Bombay</p>
+                            </div>
                         </div>
                     </div>
                     <div class="flip-card-back">
-                        <h1>John Doe</h1>
-                        <p>Architect & Engineer</p>
-                        <p>We love that guy</p>
+                        <h1>Traits</h1>
+                        <div class="traits">
+                            <label>Energy</label>
+                            <progress value="70" max="100"></progress>
+                            <label>Noise</label>
+                            <progress value="30" max="100"></progress>
+                            <label>Playfulness</label>
+                            <progress value="40" max="100"></progress>
+                            <label>Messiness</label>
+                            <progress value="10" max="100"></progress>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <img src="../img/husky.jpg" alt="Image" class="adoption-image">
+                        <img src="../img/puppy1.jpg" alt="Image" class="adoption-image">
                         <div class="adoption-description">
-                            <img src="../img/dog.png" alt="Image" class="pet-icon">
-                            <img src="../img/male.png" alt="Image" class="gender-icon">
-                            <h1 class="name">Name</h1>
-                            <p class="description">Nameawdawdawdawdawdawd</p>
+                            <i class="fas fa-dog"></i>
+                            <i class='bx bx-female-sign' style="color: hotpink"></i>
+                            <h1 class="name">Cindy</h1>
+                            <div class="description">
+                                <p>Age : Baby</p>
+                                <p>Location : Aveiro</p>
+                                <p>Size : Large</p>
+                                <p>Breed : Stray</p>
+                            </div>
                         </div>
                     </div>
                     <div class="flip-card-back">
-                        <h1>John Doe</h1>
-                        <p>Architect & Engineer</p>
-                        <p>We love that guy</p>
+                        <h1>Traits</h1>
+                        <div class="traits">
+                            <label>Energy</label>
+                            <progress value="90" max="100"></progress>
+                            <label>Noise</label>
+                            <progress value="60" max="100"></progress>
+                            <label>Playfulness</label>
+                            <progress value="80" max="100"></progress>
+                            <label>Messiness</label>
+                            <progress value="50" max="100"></progress>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <img src="../img/husky.jpg" alt="Image" class="adoption-image">
+                        <img src="../img/bird2.jpeg" alt="Image" class="adoption-image">
                         <div class="adoption-description">
-                            <img src="../img/dog.png" alt="Image" class="pet-icon">
-                            <img src="../img/male.png" alt="Image" class="gender-icon">
-                            <h1 class="name">Name</h1>
-                            <p class="description">Nameawdawdawdawdawdawd</p>
+                            <i class="fas fa-crow"></i>
+                            <i class='bx bx-male-sign' style="color: dodgerblue"></i>
+                            <h1 class="name">Captain</h1>
+                            <div class="description">
+                                <p>Age : Adult</p>
+                                <p>Location : Porto</p>
+                                <p>Size : Medium</p>
+                                <p>Breed : Cockatoo</p>
+                            </div>
                         </div>
                     </div>
                     <div class="flip-card-back">
-                        <h1>John Doe</h1>
-                        <p>Architect & Engineer</p>
-                        <p>We love that guy</p>
+                        <h1>Traits</h1>
+                        <div class="traits">
+                            <label>Energy</label>
+                            <progress value="60" max="100"></progress>
+                            <label>Noise</label>
+                            <progress value="100" max="100"></progress>
+                            <label>Playfulness</label>
+                            <progress value="60" max="100"></progress>
+                            <label>Messiness</label>
+                            <progress value="80" max="100"></progress>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <img src="../img/husky.jpg" alt="Image" class="adoption-image">
+                        <img src="../img/Turtle.jpg" alt="Image" class="adoption-image">
                         <div class="adoption-description">
-                            <img src="../img/dog.png" alt="Image" class="pet-icon">
-                            <img src="../img/male.png" alt="Image" class="gender-icon">
-                            <h1 class="name">Name</h1>
-                            <p class="description">Nameawdawdawdawdawdawd</p>
+                            <i class="fas fa-worm"></i>
+                            <i class='bx bx-female-sign' style="color: hotpink"></i>
+                            <h1 class="name">Shellie</h1>
+                            <div class="description">
+                                <p>Age : Senior</p>
+                                <p>Location : Braga</p>
+                                <p>Size : Small</p>
+                                <p>Breed : Turtle</p>
+                            </div>
                         </div>
                     </div>
                     <div class="flip-card-back">
-                        <h1>John Doe</h1>
-                        <p>Architect & Engineer</p>
-                        <p>We love that guy</p>
+                        <h1>Traits</h1>
+                        <div class="traits">
+                            <label>Energy</label>
+                            <progress value="10" max="100"></progress>
+                            <label>Noise</label>
+                            <progress value="0" max="100"></progress>
+                            <label>Playfulness</label>
+                            <progress value="10" max="100"></progress>
+                            <label>Messiness</label>
+                            <progress value="20" max="100"></progress>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <img src="../img/husky.jpg" alt="Image" class="adoption-image">
+                        <img src="../img/cat2.jpg" alt="Image" class="adoption-image">
                         <div class="adoption-description">
-                            <img src="../img/dog.png" alt="Image" class="pet-icon">
-                            <img src="../img/male.png" alt="Image" class="gender-icon">
-                            <h1 class="name">Name</h1>
-                            <p class="description">Nameawdawdawdawdawdawd</p>
+                            <i class='fas fa-cat'></i>
+                            <i class='bx bx-male-sign' style="color: dodgerblue"></i>
+                            <h1 class="name">Zoro</h1>
+                            <div class="description">
+                                <p>Age : Senior</p>
+                                <p>Location : Madeira</p>
+                                <p>Size : Medium</p>
+                                <p>Breed : Stray</p>
+                            </div>
                         </div>
                     </div>
                     <div class="flip-card-back">
-                        <h1>John Doe</h1>
-                        <p>Architect & Engineer</p>
-                        <p>We love that guy</p>
+                        <h1>Traits</h1>
+                        <div class="traits">
+                            <label>Energy</label>
+                            <progress value="30" max="100"></progress>
+                            <label>Noise</label>
+                            <progress value="20" max="100"></progress>
+                            <label>Playfulness</label>
+                            <progress value="30" max="100"></progress>
+                            <label>Messiness</label>
+                            <progress value="10" max="100"></progress>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <img src="../img/husky.jpg" alt="Image" class="adoption-image">
+                        <img src="../img/pupp2.jpeg" alt="Image" class="adoption-image">
                         <div class="adoption-description">
-                            <img src="../img/dog.png" alt="Image" class="pet-icon">
-                            <img src="../img/male.png" alt="Image" class="gender-icon">
-                            <h1 class="name">Name</h1>
-                            <p class="description">Nameawdawdawdawdawdawd</p>
+                            <i class="fas fa-dog"></i>
+                            <i class='bx bx-female-sign' style="color: hotpink"></i>
+                            <h1 class="name">Lily</h1>
+                            <div class="description">
+                                <p>Age : Young</p>
+                                <p>Location : Viseu</p>
+                                <p>Size : Medium</p>
+                                <p>Breed : Beagle</p>
+                            </div>
                         </div>
                     </div>
                     <div class="flip-card-back">
-                        <h1>John Doe</h1>
-                        <p>Architect & Engineer</p>
-                        <p>We love that guy</p>
+                        <h1>Traits</h1>
+                        <div class="traits">
+                            <label>Energy</label>
+                            <progress value="70" max="100"></progress>
+                            <label>Noise</label>
+                            <progress value="60" max="100"></progress>
+                            <label>Playfulness</label>
+                            <progress value="80" max="100"></progress>
+                            <label>Messiness</label>
+                            <progress value="60" max="100"></progress>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <img src="../img/husky.jpg" alt="Image" class="adoption-image">
+                        <img src="../img/bird1.jpeg" alt="Image" class="adoption-image">
                         <div class="adoption-description">
-                            <img src="../img/dog.png" alt="Image" class="pet-icon">
-                            <img src="../img/male.png" alt="Image" class="gender-icon">
-                            <h1 class="name">Name</h1>
-                            <p class="description">Nameawdawdawdawdawdawd</p>
+                            <i class="fas fa-crow"></i>
+                            <i class='bx bx-female-sign' style="color: hotpink"></i>
+                            <h1 class="name">Birdie</h1>
+                            <div class="description">
+                                <p>Age : Adult</p>
+                                <p>Location : Coimbra</p>
+                                <p>Size : Small</p>
+                                <p>Breed : Parakeet</p>
+                            </div>
                         </div>
                     </div>
                     <div class="flip-card-back">
-                        <h1>John Doe</h1>
-                        <p>Architect & Engineer</p>
-                        <p>We love that guy</p>
+                        <h1>Traits</h1>
+                        <div class="traits">
+                            <label>Energy</label>
+                            <progress value="80" max="100"></progress>
+                            <label>Noise</label>
+                            <progress value="90" max="100"></progress>
+                            <label>Playfulness</label>
+                            <progress value="70" max="100"></progress>
+                            <label>Messiness</label>
+                            <progress value="60" max="100"></progress>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <img src="../img/husky.jpg" alt="Image" class="adoption-image">
+                        <img src="../img/bunny.jpeg" alt="Image" class="adoption-image">
                         <div class="adoption-description">
-                            <img src="../img/dog.png" alt="Image" class="pet-icon">
-                            <img src="../img/male.png" alt="Image" class="gender-icon">
-                            <h1 class="name">Name</h1>
-                            <p class="description">Nameawdawdawdawdawdawd</p>
+                            <i class="fas fa-paw"></i>
+                            <i class='bx bx-male-sign' style="color: dodgerblue"></i>
+                            <h1 class="name">Spot</h1>
+                            <div class="description">
+                                <p>Age : Young</p>
+                                <p>Location : Lisbon</p>
+                                <p>Size : Small</p>
+                                <p>Breed : Bunny</p>
+                            </div>
                         </div>
                     </div>
                     <div class="flip-card-back">
-                        <h1>John Doe</h1>
-                        <p>Architect & Engineer</p>
-                        <p>We love that guy</p>
+                        <h1>Traits</h1>
+                        <div class="traits">
+                            <label>Energy</label>
+                            <progress value="50" max="100"></progress>
+                            <label>Noise</label>
+                            <progress value="10" max="100"></progress>
+                            <label>Playfulness</label>
+                            <progress value="60" max="100"></progress>
+                            <label>Messiness</label>
+                            <progress value="20" max="100"></progress>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
     <div class="last" style="justify-content: center; align-items: center; text-align: center; background-color: #1d1b31">
