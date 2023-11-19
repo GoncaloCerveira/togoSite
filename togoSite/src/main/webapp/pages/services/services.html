@@ -205,8 +205,21 @@
 </body>
 
 <script>
+  function filterServices() {
+    var services = document.querySelectorAll('.service-item');
+
+    services.forEach(function(service) {
+        service.style.display = ''; // hide the service
+    });
+    filterServicesBird()
+    filterServicesDog()
+    filterServicesCat()
+    filterServicesReptile()
+    filterServicesByType()
+  }
+
     // This function would be called whenever the dog checkbox is toggled
-    function filterServicesCat() {
+function filterServicesCat() {
   var checkbox = document.getElementById('cat');
   var services = document.querySelectorAll('.service-item');
 
@@ -214,9 +227,7 @@
     var animals = service.querySelector('.animals').textContent;
 
     if (checkbox.checked && animals.includes('Cat')) {
-      service.style.display = ''; // show the service
     } else if (!checkbox.checked) {
-      service.style.display = ''; // show all services if checkbox is not checked
     } else {
       service.style.display = 'none'; // hide the service
     }
@@ -230,9 +241,7 @@ function filterServicesDog() {
     var animals = service.querySelector('.animals').textContent;
 
     if (checkbox.checked && animals.includes('Dog')) {
-      service.style.display = ''; // show the service
     } else if (!checkbox.checked) {
-      service.style.display = ''; // show all services if checkbox is not checked
     } else {
       service.style.display = 'none'; // hide the service
     }
@@ -246,9 +255,7 @@ function filterServicesBird() {
     var animals = service.querySelector('.animals').textContent;
 
     if (checkbox.checked && animals.includes('Bird')) {
-      service.style.display = ''; // show the service
     } else if (!checkbox.checked) {
-      service.style.display = ''; // show all services if checkbox is not checked
     } else {
       service.style.display = 'none'; // hide the service
     }
@@ -262,9 +269,7 @@ function filterServicesReptile() {
     var animals = service.querySelector('.animals').textContent;
 
     if (checkbox.checked && animals.includes('Reptile')) {
-      service.style.display = ''; // show the service
     } else if (!checkbox.checked) {
-      service.style.display = ''; // show all services if checkbox is not checked
     } else {
       service.style.display = 'none'; // hide the service
     }
@@ -279,7 +284,6 @@ function filterServicesByLocation() {
   services.forEach(service => {
     const serviceLocation = service.getAttribute('data-location');
     if (selectedLocation === 'any' || serviceLocation === selectedLocation) {
-      service.style.display = ''; // Show
     } else {
       service.style.display = 'none'; // Hide
     }
@@ -297,7 +301,6 @@ function filterServicesByType() {
 
     // Determine if the service should be displayed based on the filters
     if ((filterSitting && isSittingService) || (filterWalking && isWalkingService) || (!filterSitting && !filterWalking)) {
-      service.style.display = '';
     } else {
       service.style.display = 'none';
     }
@@ -332,13 +335,13 @@ document.getElementById('sort-desc').addEventListener('change', () => sortServic
 document.getElementById('sort-asc').addEventListener('change', () => sortServicesByPrice(true));
 document.getElementById('sort-desc').addEventListener('change', () => sortServicesByPrice(false));
 
-document.getElementById('cat').addEventListener('change', filterServicesCat);
-document.getElementById('dog').addEventListener('change', filterServicesDog);
-document.getElementById('bird').addEventListener('change', filterServicesBird);
-document.getElementById('reptile').addEventListener('change', filterServicesReptile);
-document.getElementById('location').addEventListener('change', filterServicesByLocation);
-document.getElementById('filter-pet-sitting').addEventListener('change', filterServicesByType);
-document.getElementById('filter-pet-walking').addEventListener('change', filterServicesByType);
+document.getElementById('cat').addEventListener('change', filterServices);
+document.getElementById('dog').addEventListener('change', filterServices);
+document.getElementById('bird').addEventListener('change', filterServices);
+document.getElementById('reptile').addEventListener('change', filterServices);
+document.getElementById('location').addEventListener('change', filterServices);
+document.getElementById('filter-pet-sitting').addEventListener('change', filterServices);
+document.getElementById('filter-pet-walking').addEventListener('change', filterServices);
 
   document.getElementById('post-service-btn').addEventListener('click', function() {
     window.location.href = 'postService.html';
