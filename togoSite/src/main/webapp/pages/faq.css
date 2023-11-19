@@ -64,3 +64,85 @@
 .containerFaq .faq.active {
   border: none;
 }
+
+#slideshow {
+    width:600px;
+    margin:0 auto;
+    overflow:hidden;
+}
+
+.sliders {
+    width:3400px;
+    position:relative;
+    -webkit-animation:slide 30s ease-in-out infinite;
+    -moz-animation:slide 30s ease-in-out infinite;
+    -ms-animation:slide 30s ease-in-out infinite;
+    -o-animation:slide 30s ease-in-out infinite;
+    animation:slide 30s ease-in-out infinite;
+}
+
+.sliders section {
+    width: 600px;
+    height: 400px;
+    float:left;
+}
+
+.sliders section:nth-child(1) {background-color:transparent;}
+.sliders section:nth-child(2) {background-color:transparent;}
+.sliders section:nth-child(3) {background-color:transparent;}
+
+.sliders:hover {
+   animation-play-state:paused;
+   -webkit-animation-play-state:paused;
+}
+
+@-webkit-keyframes slide {
+    0% {left:0;}
+    33% {left:-600px;}
+    66% {left:-1200px;}
+    100% {left:0;}
+}
+@-moz-keyframes slide {
+    0% {left:0;}
+    33% {left:-600px;}
+    66% {left:-1200px;}
+    100% {left:0;}
+}
+@-ms-keyframes slide {
+    0% {left:0;}
+    33% {left:-600px;}
+    66% {left:-1200px;}
+    100% {left:0;}
+}
+@-o-keyframes slide {
+    0% {left:0;}
+    33% {left:-600px;}
+    66% {left:-1200px;}
+    100% {left:0;}
+}
+@keyframes slide {
+    0% {left:0;}
+    33% {left:-600px;}
+    66% {left:-1200px;}
+    100% {left:0;}
+}
+
+.sliders .adaptive-glass {
+  background: hsl(0 0% var(--glass-lightness) / var(--glass-alpha));
+  backdrop-filter: blur(40px);
+}
+
+.sliders figure {
+  border-radius: .5ch;
+  overflow: hidden;
+
+  & img {
+    display: block;
+    inline-size: 100%;
+  }
+}
+
+.sliders figcaption {
+  display: grid;
+  position: relative;
+}

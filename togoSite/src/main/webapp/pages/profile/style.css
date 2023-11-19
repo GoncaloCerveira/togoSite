@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #e4e9f7;
+}
+
+.container {
+  width: 100%;
+}
+nav {
+  display: flex;
+  z-index: 100;
+  width: 100%;
+  justify-content: space-around;
+  height: 80px;
+  line-height: 80px;
+  background-color: #f3f5f8;
+  border-bottom: 1px solid #3d535f;
+}
+.logo {
+  display: flex;
+  font-size: 35px;
+  font-weight: 800;
+  color: #3d535f;
+  letter-spacing: 3px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+b {
+  font-size: 70px;
+  color: rgba(43, 140, 145, 0.445);
+}
+.navItems {
+  display: flex;
+}
+.navItems li {
+  list-style: none;
+  margin: 0 15px;
+}
+.navItems li a {
+  font-size: 25px;
+  color: #3d535f;
+  letter-spacing: 3px;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.navItems li:hover a,
+.links a:hover {
+  color: rgb(43, 140, 145);
+}
+.links a {
+  font-size: 30px;
+  color: #3d535f;
+  margin: 25px 10px;
+}
+
+button {
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+  background-color: #36505f;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.4);
+}
+button:hover {
+  color: black;
+  font-weight: 400;
+  background-color: rgba(74, 140, 171, 0.64);
+}
+
+.loginbtn {
+  box-shadow: none;
+}
+
+.cols {
+  width: 50%;
+}
+.cols0 {
+  width: 90%;
+  z-index: 5;
+}
+
+.homePage {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 80px);
+}
+
+.right-side {
+  flex: 1.25;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container2 {
+  height: 80px;
+  background-color: #f3f5f8;
+}
+
+.facts {
+  display: flex;
+  width: 100%;
+  height: calc(60vh - 80px);
+  background-color: rgb(221, 218, 208);
+}
+
+.facts2 {
+  align-items: center;
+  width: 100%;
+  height: calc(30vh - 80px);
+  background-color: rgb(221, 218, 208);
+  padding: 20px;
+}
+
+.facts21 {
+  margin-left: 18%;
+  align-items: center;
+  justify-content: center;
+  border-spacing: 30px;
+  display: table;
+  background-color: rgb(221, 218, 208);
+}
+
+.form {
+  background-color: white;
+  border-radius: 20px;
+  display: table-cell;
+}
+
+.last {
+  width: 100%;
+  height: 100px;
+  background-color: #1c2c34;
+}
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  cursor: pointer;
+}
+
+#textover {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+#pet-profile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.pet-media,
+.pet-information,
+.pet-owner-info {
+  border: 2px solid #006666; /* Gray border */
+  padding: 10px; /* Adding some space inside the border */
+  margin-bottom: auto; /* Adding space between sections */
+  border-radius: 10px;
+  flex-basis: 100%;
+}
+
+.pet-details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  grid-template-rows: repeat(2, auto); /* Two rows */
+  gap: 10px; /* Space between grid items */
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-bottom: 20px; /* Space between this section and the traits section */
+  margin: 10px 0;
+  border: 2px solid #006666; /* Border color a shade of orange */
+  border-radius: 8px;
+}
+
+.pet-details-grid div {
+  /* Removed the background and added padding for spacing */
+  padding: 5px;
+}
+
+.pet-details-grid strong {
+  color: #333; /* Dark grey color for the labels */
+  margin-right: 5px; /* Space after the label */
+}
+
+.pet-media {
+  flex-basis: 100%;
+}
+
+.pet-information,
+.pet-owner-info {
+  flex-basis: 48%; /* Adjust the width as needed */
+  margin-top: 20px;
+}
+
+.live-record {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.pet-bio {
+  margin: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  gap: 10px; /* Space between grid items */
+  padding: 20px; /* White background for the profile to stand out */
+  border: 2px solid #006666; /* Border color a shade of orange */
+  border-radius: 8px;
+}
+
+.traits {
+  margin: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  gap: 10px; /* Space between grid items */
+  padding: 20px;
+  border: 2px solid #006666; /* Border color a shade of orange */
+  border-radius: 8px;
+}
+
+.traits label {
+  display: block;
+  margin: 5px 0;
+}
+
+progress {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.owner-info {
+  background: #e9e9e9;
+  padding: 10px;
+  margin-top: 10px;
+}
+/* Slideshow container */
+.slideshow-container {
+  max-width: 500px; /* Adjust the size of the slideshow container */
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default and set the size smaller than 100% if necessary */
+.mySlides {
+  display: none;
+  opacity: 0; /* Start with an opacity of 0 */
+  visibility: hidden; /* Start with visibility hidden */
+  transition: visibility 0s, opacity 0.5s linear; /* Transition effect */
+}
+
+.mySlides img {
+  display: block; /* Remove default inline styling */
+  width: 100%; /* Adjust width as necessary */
+  max-height: 500px; /* Adjust height as necessary */
+  margin: auto;
+}
+
+/* Slideshow navigation buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* Centers the button vertically */
+  width: auto;
+  padding: 16px;
+  color: #333; /* Darker color for visibility */
+  font-weight: bold;
+  font-size: 24px; /* Larger font size for clarity */
+  transition: background-color 0.6s ease, color 0.3s ease;
+  user-select: none;
+  border: none; /* Remove borders for a simplistic look */
+  background-color: transparent; /* Transparent background */
+  outline: none; /* Remove outline */
+  border-radius: 50%; /* Circular shape for the buttons */
+}
+
+/* Hover effect for buttons */
+.prev:hover,
+.next:hover {
+  color: #666; /* Color change on hover for feedback */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.1
+  ); /* Slight background on hover for visibility */
+}
+
+/* Position the "prev" button to the left */
+.prev {
+  left: 10px; /* Adjust as needed for spacing from the edge */
+}
+
+/* Position the "next" button to the right */
+.next {
+  right: 10px; /* Adjust as needed for spacing from the edge */
+}
+
+/* Adding accessibility labels for screen readers */
+.prev::after,
+.next::after {
+  content: attr(aria-label);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Display block for the active slide and add animation */
+.mySlides.active {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  animation-name: fadeIn; /* Use animation from Animate.css */
+  animation-duration: 0.5s;
+}
+
+/* Animations using Animate.css classes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.pet-owner-info {
+  padding: 10px;
+  margin-top: 20px;
+}
+
+article {
+  --img-scale: 1.001;
+  --title-color: black;
+  --link-icon-translate: -20px;
+  --link-icon-opacity: 0;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: none;
+  background: #fff;
+  transform-origin: center;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+}
+
+article a::after {
+  position: absolute;
+  inset-block: 0;
+  inset-inline: 0;
+  cursor: pointer;
+  content: "";
+}
+
+article h2 {
+  margin: 0 0 18px 0;
+  font-size: 1.9rem;
+  letter-spacing: 0.06em;
+  color: var(--title-color);
+  transition: color 0.3s ease-out;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+article img {
+  max-width: 100%;
+  transform-origin: center;
+  transform: scale(var(--img-scale));
+  transition: transform 0.4s ease-in-out;
+}
+
+.article-body {
+  padding: 24px;
+}
+
+article a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #28666e;
+}
+
+article a:focus {
+  outline: 1px dotted #28666e;
+}
+
+article a .icon {
+  min-width: 24px;
+  width: 24px;
+  height: 24px;
+  margin-left: 5px;
+  transform: translateX(var(--link-icon-translate));
+  opacity: var(--link-icon-opacity);
+  transition: all 0.3s;
+}
+
+article:has(:hover, :focus) {
+  --img-scale: 1.1;
+  --title-color: #28666e;
+  --link-icon-translate: 0;
+  --link-icon-opacity: 1;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}

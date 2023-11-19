@@ -184,3 +184,26 @@ button:hover {
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
 }
+
+.images-left {
+  width: 50%;
+}
+
+.images-right {
+  width: 50%;
+}
+
+.images-left img {
+  border-radius: 50%;
+  height: 270px;
+  width: 270px;
+  margin-left: 100px;
+}
+
+.images-right img {
+  border-radius: 50%;
+  height: 270px;
+  width: 270px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
