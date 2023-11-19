@@ -16,7 +16,7 @@
             <li><a style="cursor: pointer;" onclick="window.location.href = '/pages/servicesPage.html'">Services</a></li>
             <li><a style="cursor: pointer;" onclick="window.location.href = '/pages/forumPage.html'">Forum</a></li>
             <li class="login">
-                <button onclick="openPopup(); container.classList.remove('right-panel-active');">
+                <button class="loginbtn" onclick="openPopup(); container.classList.remove('right-panel-active');">
                     <span class="links_name">Login/Register</span>
                 </button>
             </li>
@@ -24,76 +24,215 @@
     </nav>
 </div>
 <div class="adoptions">
-    <h1 class="adoption-title">Adoptions</h1>
-    <div class="filter-container">
-        <select id="species-dropdown" class="filter">
-            <option value="all">Species</option>
-            <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
-            <option value="bird">Bird</option>
-            <option value="reptile">Reptile</option>
-            <option value="other">Other</option>
-        </select>
-        <select id="gender-dropdown" class="filter">
-            <option value="all">Gender</option>
-            <option value="male">Dog</option>
-            <option value="female">Cat</option>
-        </select>
-        <select id="age-dropdown" class="filter">
-            <option value="all">Age</option>
-            <option value="baby">Baby</option>
-            <option value="young">Young</option>
-            <option value="adult">Adult</option>
-            <option value="senior">Senior</option>
-        </select>
-        <select id="size-dropdown" class="filter">
-            <option value="all">Size</option>
-            <option value="small">Small</option>
-            <option value="medium">Medium</option>
-            <option value="large">Large</option>
-        </select>
-        <select id="location-dropdown" class="filter">
-            <option value="all">Location</option>
-            <option value="acores">Açores</option>
-            <option value="aveiro">Aveiro</option>
-            <option value="beja">Beja</option>
-            <option value="braga">Braga</option>
-            <option value="braganca">Bragança</option>
-            <option value="castelo-branco">Castelo Branco</option>
-            <option value="coimbra">Coimbra</option>
-            <option value="evora">Évora</option>
-            <option value="faro">Faro</option>
-            <option value="guarda">Guarda</option>
-            <option value="leiria">Leiria</option>
-            <option value="lisboa">Lisboa</option>
-            <option value="madeira">Madeira</option>
-            <option value="portalegre">Portalegre</option>
-            <option value="porto">Porto</option>
-            <option value="santarem">Santarém</option>
-            <option value="setubal">Setúbal</option>
-            <option value="viana-do-castelo">Viana do Castelo</option>
-            <option value="vila-real">Vila Real</option>
-            <option value="viseu">Viseu</option>
-        </select>
-        <input type="text" id="breed-input" class="filter" placeholder="Breed">
-        <button class="filter-button" onclick="submitForm()">Search</button>
+    <div class="adoption-header">
+        <h1 class="adoption-title">Adoptions</h1>
+        <div class="filter-container">
+            <select id="species-dropdown" class="filter">
+                <option value="all">Species</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="bird">Bird</option>
+                <option value="reptile">Reptile</option>
+                <option value="other">Other</option>
+            </select>
+            <select id="gender-dropdown" class="filter">
+                <option value="all">Gender</option>
+                <option value="male">Dog</option>
+                <option value="female">Cat</option>
+            </select>
+            <select id="age-dropdown" class="filter">
+                <option value="all">Age</option>
+                <option value="baby">Baby</option>
+                <option value="young">Young</option>
+                <option value="adult">Adult</option>
+                <option value="senior">Senior</option>
+            </select>
+            <select id="size-dropdown" class="filter">
+                <option value="all">Size</option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+            <select id="location-dropdown" class="filter">
+                <option value="all">Location</option>
+                <option value="acores">Açores</option>
+                <option value="aveiro">Aveiro</option>
+                <option value="beja">Beja</option>
+                <option value="braga">Braga</option>
+                <option value="braganca">Bragança</option>
+                <option value="castelo-branco">Castelo Branco</option>
+                <option value="coimbra">Coimbra</option>
+                <option value="evora">Évora</option>
+                <option value="faro">Faro</option>
+                <option value="guarda">Guarda</option>
+                <option value="leiria">Leiria</option>
+                <option value="lisboa">Lisboa</option>
+                <option value="madeira">Madeira</option>
+                <option value="portalegre">Portalegre</option>
+                <option value="porto">Porto</option>
+                <option value="santarem">Santarém</option>
+                <option value="setubal">Setúbal</option>
+                <option value="viana-do-castelo">Viana do Castelo</option>
+                <option value="vila-real">Vila Real</option>
+                <option value="viseu">Viseu</option>
+            </select>
+            <input type="text" id="breed-input" class="filter" placeholder="Breed">
+            <button class="filter-button" onclick="submitForm()">Search</button>
+        </div>
     </div>
 
-
     <div class="container">
-
         <div class="adoption-listings">
-            <div class="adoption-item">
-                <img src="../img/husky.jpg" alt="Image" class="adoption-image">
-                <div class="container" id="adoption-description">
-                    <img src="../img/dog.png" alt="Image" class="pet-icon">
-                    <img src="../img/male.png" alt="Image" class="gender-icon">
-                    <h1 class="name">Name</h1>
-                    <p class="description">Nameawdawdawdawdawdawd</p>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../img/husky.jpg" alt="Image" class="adoption-image">
+                        <div class="adoption-description">
+                            <img src="../img/dog.png" alt="Image" class="pet-icon">
+                            <img src="../img/male.png" alt="Image" class="gender-icon">
+                            <h1 class="name">Name</h1>
+                            <p class="description">Nameawdawdawdawdawdawd</p>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>John Doe</h1>
+                        <p>Architect & Engineer</p>
+                        <p>We love that guy</p>
+                    </div>
                 </div>
             </div>
-
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../img/husky.jpg" alt="Image" class="adoption-image">
+                        <div class="adoption-description">
+                            <img src="../img/dog.png" alt="Image" class="pet-icon">
+                            <img src="../img/male.png" alt="Image" class="gender-icon">
+                            <h1 class="name">Name</h1>
+                            <p class="description">Nameawdawdawdawdawdawd</p>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>John Doe</h1>
+                        <p>Architect & Engineer</p>
+                        <p>We love that guy</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../img/husky.jpg" alt="Image" class="adoption-image">
+                        <div class="adoption-description">
+                            <img src="../img/dog.png" alt="Image" class="pet-icon">
+                            <img src="../img/male.png" alt="Image" class="gender-icon">
+                            <h1 class="name">Name</h1>
+                            <p class="description">Nameawdawdawdawdawdawd</p>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>John Doe</h1>
+                        <p>Architect & Engineer</p>
+                        <p>We love that guy</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../img/husky.jpg" alt="Image" class="adoption-image">
+                        <div class="adoption-description">
+                            <img src="../img/dog.png" alt="Image" class="pet-icon">
+                            <img src="../img/male.png" alt="Image" class="gender-icon">
+                            <h1 class="name">Name</h1>
+                            <p class="description">Nameawdawdawdawdawdawd</p>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>John Doe</h1>
+                        <p>Architect & Engineer</p>
+                        <p>We love that guy</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../img/husky.jpg" alt="Image" class="adoption-image">
+                        <div class="adoption-description">
+                            <img src="../img/dog.png" alt="Image" class="pet-icon">
+                            <img src="../img/male.png" alt="Image" class="gender-icon">
+                            <h1 class="name">Name</h1>
+                            <p class="description">Nameawdawdawdawdawdawd</p>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>John Doe</h1>
+                        <p>Architect & Engineer</p>
+                        <p>We love that guy</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../img/husky.jpg" alt="Image" class="adoption-image">
+                        <div class="adoption-description">
+                            <img src="../img/dog.png" alt="Image" class="pet-icon">
+                            <img src="../img/male.png" alt="Image" class="gender-icon">
+                            <h1 class="name">Name</h1>
+                            <p class="description">Nameawdawdawdawdawdawd</p>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>John Doe</h1>
+                        <p>Architect & Engineer</p>
+                        <p>We love that guy</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../img/husky.jpg" alt="Image" class="adoption-image">
+                        <div class="adoption-description">
+                            <img src="../img/dog.png" alt="Image" class="pet-icon">
+                            <img src="../img/male.png" alt="Image" class="gender-icon">
+                            <h1 class="name">Name</h1>
+                            <p class="description">Nameawdawdawdawdawdawd</p>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>John Doe</h1>
+                        <p>Architect & Engineer</p>
+                        <p>We love that guy</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../img/husky.jpg" alt="Image" class="adoption-image">
+                        <div class="adoption-description">
+                            <img src="../img/dog.png" alt="Image" class="pet-icon">
+                            <img src="../img/male.png" alt="Image" class="gender-icon">
+                            <h1 class="name">Name</h1>
+                            <p class="description">Nameawdawdawdawdawdawd</p>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>John Doe</h1>
+                        <p>Architect & Engineer</p>
+                        <p>We love that guy</p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+    <div class="last" style="justify-content: center; align-items: center; text-align: center; background-color: #1d1b31">
+        <br>
+        <span style="font-weight: 700; font-size: 20px; color: rgb(221, 218, 208); cursor: pointer;" onclick="window.open('https://startupipm.web.app/', '_blank');"
+        >©ARTEMIS2023</span>
     </div>
 </div>
 </body>

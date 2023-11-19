@@ -87,6 +87,10 @@ button:hover {
   background-color: rgba(74, 140, 171, 0.64);
 }
 
+.loginbtn {
+  box-shadow: none;
+}
+
 .cols {
   width: 50%;
 }
