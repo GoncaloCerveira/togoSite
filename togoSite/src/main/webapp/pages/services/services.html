@@ -62,12 +62,13 @@
 <!-- Where the POPUP is!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
 
 <nav>
-  <div class="logo" style="cursor: pointer;" onclick="window.location.href = '../pages/mainPage.html'">TOGO<b>.</b></div>
+  <div class="logo" style="cursor: pointer;" onclick="window.location.href = '../mainPage.html'">TOGO<b>.</b></div>
   <ul class="navItems">
-    <li><a style="cursor: pointer;" onclick="window.location.href = '/pages/mainPage.html'">Home</a></li>
-    <li><a style="cursor: pointer;" onclick="window.location.href = '/pages/adoptionPage.html'">Adoption</a></li>
-    <li><a style="cursor: pointer;" onclick="window.location.href = '/pages/servicesPage.html'">Services</a></li>
-    <li><a style="cursor: pointer;" onclick="window.location.href = '/pages/forumPage.html'">Forum</a></li>
+    <li><a style="cursor: pointer;" onclick="window.location.href = '../mainPage.html'">Home</a></li>
+    <li><a style="cursor: pointer;" onclick="window.location.href = '../adoption/adoptionPage.html'">Adoption</a></li>
+    <li><a style="cursor: pointer;" onclick="window.location.href = '../creating/animalCreatePage.html'">Put for Adoption</a></li>
+    <li><a style="cursor: pointer;" onclick="window.location.href = '../services/services.html'">Services</a></li>
+    <li><a style="cursor: pointer;" onclick="window.location.href = '../forum/forumPage.html'">Forum</a></li>
     <li class="login">
       <button onclick="openPopup(); container.classList.remove('right-panel-active');">
         <span class="links_name">Login/Register</span>
@@ -206,7 +207,7 @@
         <input type="checkbox" id="filter-pet-walking" name="service" value="pet-walking">
         <label for="filter-pet-walking">Pet Walking</label>
       </div>
-      <button class="post-service-btn" id = "post-service-btn" type="button" style="margin-top: 10%; width: 70%; margin-left: 15%;">Create a Service</button>
+      <button class="post-service-btn" id = "post-service-btn" type="button" style="margin-top: 10%; width: 70%; margin-left: 15%;" onclick="window.location.href = '../services/postService.html'">Create a Service</button>
     </div>
     <div style="margin-bottom: 55%;">
   </div>
