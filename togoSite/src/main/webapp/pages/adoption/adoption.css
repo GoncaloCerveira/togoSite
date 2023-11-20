@@ -7,7 +7,7 @@
 
 .adoption-header {
     background-color: #1d1b31;
-    height: 30vh;
+    height: 40%;
 }
 
 .adoption-title {
@@ -56,8 +56,8 @@
 }
 
 .flip-card {
-    width: 350px;
-    height: 450px;
+    width: 250px;
+    height: 350px;
     margin: 25px 25px 25px 25px;
     padding: 20px;
     cursor: pointer;
@@ -100,8 +100,8 @@
 }
 
 .adoption-image {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     aspect-ratio: 16/9 ;
     border-radius: 50%;
     overflow: hidden;
@@ -115,54 +115,38 @@
     width: 100%;
 }
 
-.pet-icon {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    margin: 20px;
-    left: 0;
-    overflow: hidden;
-}
-
-.gender-icon {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    margin: 20px;
-    right: 0;
-    overflow: hidden;
-}
-
 .fas {
     position: absolute;
-    width: 50px;
-    height: 50px;
-    margin: 20px;
+    width: 40px;
+    height: 40px;
+    margin-top: 25px;
     left: 0;
     overflow: hidden;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .bx {
     position: absolute;
-    width: 50px;
-    height: 50px;
-    margin: 20px;
+    width: 40px;
+    height: 40px;
+    margin-top: 20px;
     right: 0;
     overflow: hidden;
     color: pink;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .name {
     position: relative;
-    top: 80px;
+    top: 55px;
+    font-size: 30px;
 }
 
 .description {
-    margin-top: 25%;
+    margin-top: 30%;
     display: flex;
     flex-wrap: wrap;
+    font-size: 12px;
 }
 
 .description p {
