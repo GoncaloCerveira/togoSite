@@ -142,81 +142,40 @@
         <div class="form-container sign-up-container">
             <form action="#">
                 <h1>Create Account</h1>
-                <input type="text" placeholder="Name" />
-                <input type="email" placeholder="Email" />
-                <div style="display: flex; width: 100%">
+                <input type="text" placeholder="Name" id="nameR"/>
+                <input type="email" placeholder="Email" id="emailR"/>
+                <div style="display: flex; width: 100%;">
                     <input id="password" type="password" placeholder="Password" />
-                    <i
-                            class="far fa-eye"
-                            id="togglePassword"
-                            style="
-                  margin-left: -35px;
-                  cursor: pointer;
-                  padding: 12px 15px;
-                  margin: 8px 0;
-                  background-color: #eee;
-                "
-                    ></i>
+                    <i class="far fa-eye" id="togglePassword" style="margin-left: -35px; cursor: pointer; padding: 12px 15px; margin: 8px 0; background-color: #eee;"></i>
                 </div>
-                <div style="display: flex; width: 100%">
-                    <input
-                            id="passwordC"
-                            type="password"
-                            placeholder="Confirm Password"
-                    /><br />
-                    <i
-                            class="far fa-eye"
-                            id="togglePasswordC"
-                            style="
-                  margin-left: -35px;
-                  cursor: pointer;
-                  padding: 12px 15px;
-                  margin: 8px 0;
-                  background-color: #eee;
-                "
-                    ></i>
-                </div>
-                <br />
-                <button>Sign Up</button>
+                <div style="display: flex; width: 100%;">
+                    <input id="passwordC" type="password" placeholder="Confirm Password" /><br>
+                    <i class="far fa-eye" id="togglePasswordC" style="margin-left: -35px; cursor: pointer; padding: 12px 15px; margin: 8px 0; background-color: #eee;"></i>
+                </div><br>
+                <button id="signUpButton2">Sign Up</button>
             </form>
         </div>
         <div class="form-container sign-in-container">
             <form action="#">
                 <h1>Sign in</h1>
-                <input type="email" placeholder="Email" />
-                <div style="display: flex; width: 100%">
+                <input type="email" placeholder="Email" id="emailL"/>
+                <div style="display: flex; width: 100%;">
                     <input id="passwordL" type="password" placeholder="Password" />
-                    <i
-                            class="far fa-eye"
-                            id="togglePasswordL"
-                            style="
-                  margin-left: -35px;
-                  cursor: pointer;
-                  padding: 12px 15px;
-                  margin: 8px 0;
-                  background-color: #eee;
-                "
-                    ></i>
-                </div>
-                <br />
-                <button>Sign In</button>
+                    <i class="far fa-eye" id="togglePasswordL" style="margin-left: -35px; cursor: pointer; padding: 12px 15px; margin: 8px 0; background-color: #eee;"></i>
+                </div><br>
+                <button id="signInButton2">Sign In</button>
             </form>
         </div>
         <div class="overlay-container">
             <div class="overlay">
                 <div class="overlay-panel overlay-left">
                     <h1>Welcome Back!</h1>
-                    <p>
-                        To keep connected with us please login with your personal info
-                    </p>
+                    <p>To keep connected with us please login with your personal info</p>
                     <button class="ghost" id="signIn">Sign In</button>
                 </div>
                 <div class="overlay-panel overlay-right">
                     <h1>Hello, Friend!</h1>
-                    <p>
-                        Don't have an account?<br />Enter your personal details and
-                        start journey with us
-                    </p>
+                    <p>Don't have an account?<br>Enter your personal details and start journey with us</p>
                     <button class="ghost" id="signUp">Register</button>
                 </div>
             </div>
@@ -232,5 +191,87 @@
 </div>
 </body>
 </html>
+
+<script type="module">
+    //Update the below URL with the appropriate version if necessary.
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+    import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        onAuthStateChanged,
+        signOut
+        //Update the below URL with the appropriate version if necessary.
+    } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+
+
+    // INSERT YOUR FIREBASE CONFIG OBJECT HERE
+    const firebaseConfig = {
+        apiKey: "AIzaSyCnYbqrefRPaXQWR06l554KvNC7rjIEB9o",
+        authDomain: "startupipm.firebaseapp.com",
+        projectId: "startupipm",
+        storageBucket: "startupipm.appspot.com",
+        messagingSenderId: "995574355548",
+        appId: "1:995574355548:web:aa0fa875180b128de4b899",
+        measurementId: "G-NJYNRXD6B4"
+    };
+
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const signUpButton2 = document.querySelector("#signUpButton2");
+    const signInButton2 = document.querySelector("#signInButton2");
+
+    const userSignUp = async() => {
+        const email = document.getElementById('emailR').value;
+        const password = document.getElementById('password').value;
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                console.log(user);
+                alert("Your account has been created!");
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode + errorMessage)
+            })
+    }
+
+    const userSignIn = async() => {
+        const email = document.getElementById('emailL').value;
+        const password = document.getElementById('passwordL').value;
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                alert("You have signed in successfully!");
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode + errorMessage)
+            })
+    }
+
+    const checkAuthState = async() => {
+        var linkElement = document.querySelector('.links_name');
+        onAuthStateChanged(auth, user => {
+            if(user) {
+                linkElement.innerText = user.email.split("@")[0];
+                return true;
+            }
+            return false;
+        })
+    }
+
+    const userSignOut = async() => {
+        await signOut(auth);
+    }
+
+    checkAuthState();
+
+    signUpButton2.addEventListener('click', userSignUp);
+    signInButton2.addEventListener('click', userSignIn);
+</script>
 
 <script src="script.js"></script>

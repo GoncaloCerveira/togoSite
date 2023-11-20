@@ -111,7 +111,9 @@ function filterByBreed() {
     });
 
     function openPopup() {
-        popup.classList.toggle("open-popup");
+        var linkElement = document.querySelector('.links_name');
+        if(linkElement.innerText === 'Login/Register')
+            popup.classList.toggle("open-popup");
     }
 
     function closePopup() {
