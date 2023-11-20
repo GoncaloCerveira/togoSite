@@ -96,3 +96,69 @@ function filterByBreed() {
         }
     });
 }
+
+    let popup = document.getElementById("popup");
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+
+    signUpButton.addEventListener('click', () => {
+	    container.classList.add("right-panel-active");
+    });
+
+    signInButton.addEventListener('click', () => {
+	    container.classList.remove("right-panel-active");
+    });
+
+    function openPopup() {
+        popup.classList.toggle("open-popup");
+    }
+
+    function closePopup() {
+        popup.classList.remove("open-popup");
+    }
+
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        this.parentElement.classList.toggle("active");
+
+        var pannel = this.nextElementSibling;
+
+        if (pannel.style.display === "block") {
+          pannel.style.display = "none";
+        } else {
+          pannel.style.display = "block";
+        }
+      });
+    }
+
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+
+    togglePassword.addEventListener('click', function (e) {
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+    });
+
+    const togglePassword2 = document.querySelector('#togglePasswordC');
+    const password2 = document.querySelector('#passwordC');
+
+    togglePassword2.addEventListener('click', function (e) {
+        const type = password2.getAttribute('type') === 'password' ? 'text' : 'passwordC';
+        password2.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+    });
+
+    const togglePassword3 = document.querySelector('#togglePasswordL');
+    const password3 = document.querySelector('#passwordL');
+
+    togglePassword3.addEventListener('click', function (e) {
+        const type = password3.getAttribute('type') === 'password' ? 'text' : 'passwordL';
+        password3.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+    });
