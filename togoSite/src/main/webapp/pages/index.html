@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="faq.css">
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+            integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+    <title>TOGO PET Adoption</title>
+</head>
+<body>
+    <div class="container" id="outerbox">
+        <nav>
+            <div class="logo" style="cursor: pointer;" onclick="window.location.href = '../pages/index.html'">TOGO<b>.</b></div>
+            <ul class="navItems">
+                <li><a style="cursor: pointer;" onclick="window.location.href = '../pages/index.html'">Home</a></li>
+                <li><a style="cursor: pointer;" onclick="window.location.href = '../pages/adoption/adoptionPage.html'">Adoption</a></li>
+                <li><a style="cursor: pointer;" onclick="window.location.href = '../pages/creating/animalCreatePage.html'">Put for Adoption</a></li>
+                <li><a style="cursor: pointer;" onclick="window.location.href = '../pages/services/services.html'">Services</a></li>
+                <li><a style="cursor: pointer;" onclick="window.location.href = '../pages/forum/forumPage.html'">Forum</a></li>
+                <li class="login">
+                    <button onclick="openPopup(); container.classList.remove('right-panel-active');">
+                        <span class="links_name">Login/Register</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="homePage">
+        <div class="left-side">
+            <h2 style="font-weight: 600; font-size: 35px; margin-left: 35%; color:#f3f5f8; margin-bottom: 2%;">Life is better with a Best Friend. Adopt.</h2>
+            <br>
+            <div class="text-area">
+                <p style="justify-content: center; font-size: 20px; margin-left: 35%; color:#f3f5f8; ">
+                    The best platform to make your choice and understand everything about adopting your own pet
+                </p>
+            </div>
+            <button style="width:25%; margin-left: 35%; margin-top: 4%;"> <span class="links_name" onclick="window.location.href = '../pages/adoption/adoptionPage.html'">ADOPT</span></button>
+        </div>
+        <div class="right-side" style="text-align: center;">
+            <div class="images-left" style="margin-left: 2%;">
+                <img src="../pages/img/cat.jpeg" alt="Middle Image">
+            </div>
+            <div class="images-right" style="margin-top: 6%; margin-right: 1%;">
+                <img src="../pages/img/bird1.jpeg" alt="Top Image">
+                <img src="https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*" alt="Bottom Image">
+            </div>
+        </div>
+    </div>
+    <div class="container2"></div>
+    <div class="facts">
+        <div class="left-side">
+            <h2 style="font-weight: 600; font-size: 35px; margin-left: 45%; color:#f3f5f8; margin-bottom: 2%;">Facts about our Platform</h2>
+            <br>
+            <div class="text-area">
+                <p style="justify-content: center; font-size: 20px; margin-left: 45%; color:#f3f5f8; ">
+                    We try to bring the information closer to you, so you can be able to have the best capability and free will to choose what you want! The best decision possible
+                </p>
+            </div>
+            <button style="width:25%; margin-left: 45%; margin-top: 4%;"> <span class="links_name" onclick="on();">More</span></button>
+        </div>
+        <div class="right-side" style="text-align: center;">
+            <div id="slideshow">
+                <div class="sliders" style="margin-top: 8%;">
+                    <section>
+                        <figure>
+                            <picture>
+                                <img src="https://flxt.tmsimg.com/assets/p17752646_v_h8_ac.jpg" alt="">
+                            </picture>
+                            <figcaption style="background-color: black;">
+                                <section class="adaptive-glass">
+                                    <h3 style="margin-top: 10px; font-size: 25px; font-weight: 600; color: white">History of TOGO</h3>
+                                </section>
+                            </figcaption>
+                        </figure>
+                    </section>
+                    <section>
+                        <figure>
+                            <picture>
+                                <img src="https://diamondpet.storage.googleapis.com/wp-content/uploads/2019/01/22100704/394-1951-Rescue-Me-Shelter-Needs-From-Donors.jpg" alt="">
+                            </picture>
+                            <figcaption style="background-color: black;">
+                                <section class="adaptive-glass" style="z-index: 10000">
+                                    <h3 style="margin-top: 10px; font-size: 25px; font-weight: 600; color: white;">Shelters are Important</h3>
+                                </section>
+                            </figcaption>
+                        </figure>
+                    </section>
+                    <section>
+                        <figure>
+                            <picture>
+                                <img src="data:image/jpeg;base64,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" alt="">
+                            </picture>
+                            <figcaption style="background-color: black;">
+                                <section class="adaptive-glass">
+                                    <h3 style="margin-top: 10px; font-size: 25px; font-weight: 600; color: white;">Your Best Friend</h3>
+                                </section>
+                            </figcaption>
+                        </figure>
+                    </section>
+                    <section>
+
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="facts2">
+        <div class="facts21">
+            <div class="form" style="width: 18%; text-align: center;">
+                <div style="color: black; text-align: center; font-size: 50px; display: inline-block">500m</div>
+                <div style="color: blue; text-align: center; font-size: 40px; display: inline-block">&nbsp;<i class='bx bx-chat'></i></i></div>
+                <hr style="width:80%; color: #f3f5f8; margin-left: 20px;">
+                <div class="title" style="text-align: center; font-weight: 600; margin-top: 2%;">Daily Conversations</div>
+            </div>
+            <div class="form" style="width: 18%; text-align: center;">
+                <div style="color: black; text-align: center; font-size: 50px; display: inline-block">1M</div>
+                <div style="color: black; text-align: center; font-size: 40px; display: inline-block">&nbsp;<i class='bx bxl-github' ></i></i></div>
+                <hr style="width:80%; color: #f3f5f8; margin-left: 20px;">
+                <div class="title" style="text-align: center; font-weight: 600; margin-top: 2%;">Pets adopted annualy</div>
+            </div>
+            <div class="form" style="width: 18%; text-align: center;">
+                <div style="color: black; text-align: center; font-size: 50px; display: inline-block">2M</div>
+                <div style="color: #0f0; text-align: center; font-size: 40px; display: inline-block">&nbsp;<i class='bx bx-user'></i></div>
+                <hr style="width:80%; color: #f3f5f8; margin-left: 20px;">
+                <div class="title" style="text-align: center; font-weight: 600; margin-top: 2%;">Daily Users</div>
+            </div>
+            <div class="form" style="width: 18%; text-align: center;">
+                <div style="color: black; text-align: center; font-size: 50px; display: inline-block">4.7</div>
+                <div style="color: #FFFF00; text-align: center; font-size: 40px; display: inline-block">&nbsp;<i class='bx bxs-star'></i></i></div>
+                <hr style="width:80%; color: #f3f5f8; margin-left: 20px;">
+                <div class="title" style="text-align: center; font-weight: 600; margin-top: 2%;">Rating</div>
+            </div>
+        </div>
+    </div>
+    <div class="containerFaq">
+        <div class="wrapper">
+            <br><br><h1>FAQ (Frequently Asked Questions)</h1><br>
+            <div class="faq">
+                <button class="accordion">What is TOGO?<i class="fa-solid fa-chevron-down"></i></button>
+
+                <div class="pannel">
+                    <hr style="width:100%; background-color: black; height: 4px;"><br>
+                    <p>A website where you can learn all you want about adoption and animals</p>
+                </div>
+            </div>
+            <div class="faq">
+                <button class="accordion">Who made TOGO?<i class="fa-solid fa-chevron-down"></i></button>
+                <div class="pannel">
+                    <hr style="width:100%; background-color: black; height: 4px;"><br>
+                    <p>TOGO was created by 4 MEI students at NOVA FCT for an IPM project</p>
+                </div>
+            </div>
+            <div class="faq">
+                <button class="accordion">Does TOGO have all animals for adopt?<i class="fa-solid fa-chevron-down"></i></button>
+                <div class="pannel">
+                    <hr style="width:100%; background-color: black; height: 4px;"><br>
+                    <p>Based on the law, TOGO can´t have certain types of animal</p>
+                </div>
+            </div>
+            <div class="faq">
+                <button class="accordion">I am a Shelter/Foundation?<i class="fa-solid fa-chevron-down"></i></button>
+                <div class="pannel">
+                    <hr style="width:100%; background-color: black; height: 4px;"><br>
+                    <p>If you are a shelter organization or a animal foundation and you want to work with us, you can contact us at our email or instagram profile</p>
+                </div>
+            </div>
+            <div class="faq">
+                <button class="accordion">Need Help?<i class="fa-solid fa-chevron-down"></i></button>
+                <div class="pannel">
+                    <hr style="width:100%; background-color: black; height: 4px;"><br>
+                    <p>If you want more help go to our FORUM, there you can find more information abot us.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="last" style="justify-content: center; align-items: center; text-align: center;">
+        <br>
+        <span style="font-weight: 700; font-size: 20px; color: rgb(221, 218, 208); cursor: pointer;" onclick="window.open('https://startupipm.web.app/', '_blank');"
+        >©ARTEMIS2023</span>
+    </div>
+
+
+    <!-- Where the POPUP is!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+    <div class="popup" id="popup">
+        <div class="container" id="container">
+            <div class="top-right-button" onclick="closePopup()">X</div>
+            <div class="form-container sign-up-container">
+                <form action="#">
+                    <h1>Create Account</h1>
+                    <input type="text" placeholder="Name" />
+                    <input type="email" placeholder="Email" />
+                    <div style="display: flex; width: 100%;">
+                        <input id="password" type="password" placeholder="Password" />
+                        <i class="far fa-eye" id="togglePassword" style="margin-left: -35px; cursor: pointer; padding: 12px 15px; margin: 8px 0; background-color: #eee;"></i>
+                    </div>
+                    <div style="display: flex; width: 100%;">
+                        <input id="passwordC" type="password" placeholder="Confirm Password" /><br>
+                        <i class="far fa-eye" id="togglePasswordC" style="margin-left: -35px; cursor: pointer; padding: 12px 15px; margin: 8px 0; background-color: #eee;"></i>
+                    </div><br>
+                    <button>Sign Up</button>
+                </form>
+            </div>
+            <div class="form-container sign-in-container">
+                <form action="#">
+                    <h1>Sign in</h1>
+                    <input type="email" placeholder="Email" />
+                    <div style="display: flex; width: 100%;">
+                        <input id="passwordL" type="password" placeholder="Password" />
+                        <i class="far fa-eye" id="togglePasswordL" style="margin-left: -35px; cursor: pointer; padding: 12px 15px; margin: 8px 0; background-color: #eee;"></i>
+                    </div><br>
+                    <button>Sign In</button>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>Welcome Back!</h1>
+                        <p>To keep connected with us please login with your personal info</p>
+                        <button class="ghost" id="signIn">Sign In</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>Hello, Friend!</h1>
+                        <p>Don't have an account?<br>Enter your personal details and start journey with us</p>
+                        <button class="ghost" id="signUp">Register</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Where the POPUP is!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+    <div id="overlay" onclick="off()" style="z-index: 1000;">
+        <div id="textover">DEMO<br>This is only a prototype, the button doesn´t belong to a scenario<br>Sorry for the inconvenience</div>
+    </div>
+
+</body>
+
+<script>
+    let popup = document.getElementById("popup");
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+
+    signUpButton.addEventListener('click', () => {
+	    container.classList.add("right-panel-active");
+    });
+
+    signInButton.addEventListener('click', () => {
+	    container.classList.remove("right-panel-active");
+    });
+
+    function openPopup() {
+        popup.classList.toggle("open-popup");
+    }
+
+    function closePopup() {
+        popup.classList.remove("open-popup");
+    }
+
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        this.parentElement.classList.toggle("active");
+
+        var pannel = this.nextElementSibling;
+
+        if (pannel.style.display === "block") {
+          pannel.style.display = "none";
+        } else {
+          pannel.style.display = "block";
+        }
+      });
+    }
+
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+
+    togglePassword.addEventListener('click', function (e) {
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+    });
+
+    const togglePassword2 = document.querySelector('#togglePasswordC');
+    const password2 = document.querySelector('#passwordC');
+
+    togglePassword2.addEventListener('click', function (e) {
+        const type = password2.getAttribute('type') === 'password' ? 'text' : 'passwordC';
+        password2.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+    });
+
+    const togglePassword3 = document.querySelector('#togglePasswordL');
+    const password3 = document.querySelector('#passwordL');
+
+    togglePassword3.addEventListener('click', function (e) {
+        const type = password3.getAttribute('type') === 'password' ? 'text' : 'passwordL';
+        password3.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+    });
+
+    function on() {
+        document.getElementById("overlay").style.display = "block";
+      }
+
+    function off() {
+        document.getElementById("overlay").style.display = "none";
+    }
+</script>
+</html>
