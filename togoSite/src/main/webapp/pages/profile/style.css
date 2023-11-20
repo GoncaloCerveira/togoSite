@@ -240,35 +240,26 @@ progress {
   padding: 16px;
   color: #333; /* Darker color for visibility */
   font-weight: bold;
-  font-size: 24px; /* Larger font size for clarity */
+  font-size: 44px; /* Larger font size for clarity */
   transition: background-color 0.6s ease, color 0.3s ease;
-  user-select: none;
-  border: none; /* Remove borders for a simplistic look */
-  background-color: transparent; /* Transparent background */
-  outline: none; /* Remove outline */
-  border-radius: 50%; /* Circular shape for the buttons */
+  border-radius: 40%; /* Circular shape for the buttons */
 }
 
 /* Hover effect for buttons */
 .prev:hover,
 .next:hover {
   color: #666; /* Color change on hover for feedback */
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.1
-  ); /* Slight background on hover for visibility */
+  background-color: white;
 }
 
 /* Position the "prev" button to the left */
 .prev {
-  left: 10px; /* Adjust as needed for spacing from the edge */
+  left: -20%; /* Adjust as needed for spacing from the edge */
 }
 
 /* Position the "next" button to the right */
 .next {
-  right: 10px; /* Adjust as needed for spacing from the edge */
+  right: -20%; /* Adjust as needed for spacing from the edge */
 }
 
 /* Adding accessibility labels for screen readers */
