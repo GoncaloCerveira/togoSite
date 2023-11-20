@@ -46,12 +46,8 @@ var slideIndex = 1;
       container.classList.add('right-panel-active');
     });
 
-    function openPopup2() {
-      popup2.classList.toggle('open-popup');
-    }
-
-    function closePopup2() {
-      popup2.classList.remove('open-popup');
+    function closePopup() {
+      popup.classList.remove('open-popup');
     }
 
     signInButton.addEventListener('click', () => {
