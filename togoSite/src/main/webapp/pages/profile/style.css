@@ -7,10 +7,6 @@
   font-family: 'poppins', sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background-color: #e4e9f7;
 }
@@ -84,67 +80,6 @@ button:hover {
   color: black;
   font-weight: 400;
   background-color: rgba(74, 140, 171, 0.64);
-}
-
-.loginbtn {
-  box-shadow: none;
-}
-
-.cols {
-  width: 50%;
-}
-.cols0 {
-  width: 90%;
-  z-index: 5;
-}
-
-.homePage {
-  display: flex;
-  width: 100%;
-  height: calc(100vh - 80px);
-}
-
-.right-side {
-  flex: 1.25;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.left-side {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.container2 {
-  height: 80px;
-  background-color: #f3f5f8;
-}
-
-.facts {
-  display: flex;
-  width: 100%;
-  height: calc(60vh - 80px);
-  background-color: rgb(221, 218, 208);
-}
-
-.facts2 {
-  align-items: center;
-  width: 100%;
-  height: calc(30vh - 80px);
-  background-color: rgb(221, 218, 208);
-  padding: 20px;
-}
-
-.facts21 {
-  margin-left: 18%;
-  align-items: center;
-  justify-content: center;
-  border-spacing: 30px;
-  display: table;
-  background-color: rgb(221, 218, 208);
 }
 
 .form {
