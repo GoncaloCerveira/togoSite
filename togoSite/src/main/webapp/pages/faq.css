@@ -137,6 +137,8 @@
   overflow: hidden;
 
   & img {
+    z-index: 10;
+    width:700;
     display: block;
     inline-size: 100%;
   }
