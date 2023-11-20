@@ -264,25 +264,6 @@ button:hover {
   gap: 10px;
 }
 
-/* Style the slider itself */
-.traits-container input[type='range']::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: #ff8c00;
-  cursor: pointer;
-}
-
-.traits-container input[type='range']::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: #ff8c00;
-  cursor: pointer;
-}
-
 #pet-details-form {
   display: flex;
   height: 85%;
