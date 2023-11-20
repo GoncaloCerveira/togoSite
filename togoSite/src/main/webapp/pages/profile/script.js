@@ -57,3 +57,11 @@ var slideIndex = 1;
     function openPopup() {
       popup.classList.toggle('open-popup');
     }
+
+    function on() {
+        document.getElementById("overlay").style.display = "block";
+    }
+
+    function off() {
+        document.getElementById("overlay").style.display = "none";
+    }
