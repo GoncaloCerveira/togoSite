@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="login.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="faq.css">
@@ -198,8 +199,8 @@
             <div class="form-container sign-up-container">
                 <form action="#">
                     <h1>Create Account</h1>
-                    <input type="text" placeholder="Name" />
-                    <input type="email" placeholder="Email" />
+                    <input type="text" placeholder="Name" id="nameR"/>
+                    <input type="email" placeholder="Email" id="emailR"/>
                     <div style="display: flex; width: 100%;">
                         <input id="password" type="password" placeholder="Password" />
                         <i class="far fa-eye" id="togglePassword" style="margin-left: -35px; cursor: pointer; padding: 12px 15px; margin: 8px 0; background-color: #eee;"></i>
@@ -208,7 +209,7 @@
                         <input id="passwordC" type="password" placeholder="Confirm Password" /><br>
                         <i class="far fa-eye" id="togglePasswordC" style="margin-left: -35px; cursor: pointer; padding: 12px 15px; margin: 8px 0; background-color: #eee;"></i>
                     </div><br>
-                    <button>Sign Up</button>
+                    <button onclick="registerUser()">Sign Up</button>
                 </form>
             </div>
             <div class="form-container sign-in-container">
@@ -219,7 +220,7 @@
                         <input id="passwordL" type="password" placeholder="Password" />
                         <i class="far fa-eye" id="togglePasswordL" style="margin-left: -35px; cursor: pointer; padding: 12px 15px; margin: 8px 0; background-color: #eee;"></i>
                     </div><br>
-                    <button>Sign In</button>
+                    <button onclick="loginUser()">Sign In</button>
                 </form>
             </div>
             <div class="overlay-container">
