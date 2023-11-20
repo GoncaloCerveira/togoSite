@@ -1,0 +1,203 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+  background-color: #e4e9f7; /* Light orange/peach background for the body */
+  color: #5a5a5a; /* Darker text for contrast */
+  font-family: Arial, sans-serif;
+}
+h1,
+div {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style for the container holding the rectangles */
+.rectangle-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  flex-grow: 1;
+  height: calc(100vh - 3em -4em); /* Total height calculation */
+  align-items: stretch; /* New addition */
+  position: relative;
+}
+.rectangle {
+  width: 30%;
+  background-color: #e4e9f7;
+  border: 2px solid #000000;
+  padding: 1em;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  /* Remove any fixed height if set */
+}
+.rectangle form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between form fields */
+}
+.rectangle label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.rectangle label2 {
+  margin-bottom: 5px;
+}
+.rectangle select,
+.rectangle input[type="text"] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.rectangle fieldset {
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.rectangle fieldset legend {
+  padding: 0 5px;
+}
+.rectangle input[type="checkbox"] {
+  margin-right: 5px;
+}
+.rectangle button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #b0cda5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.rectangle input,
+.rectangle select,
+.rectangle textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #4088e7;
+  /* Adjust the space as needed */
+}
+.rectangle form > :last-child {
+  margin-bottom: 0;
+}
+.price-container {
+  display: flex;
+  align-items: center; /* Aligns the input, static text, and select box horizontally */
+}
+.price-container input[type="text"],
+.price-container select {
+  margin-right: 5px; /* Adds spacing between the elements */
+}
+
+.rectangle textarea#contact {
+  font-family: Arial, sans-serif;
+  height: auto; /* Let the height grow with content */
+  padding: 10px; /* Padding for the content */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none; /* Allows the user to resize the textarea vertically */
+}
+
+.vertical-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center children horizontally */
+  justify-content: start; /* Align children to the start of the container */
+  width: 30%; /* Optional: if you want the stack to fill the width */
+  /* No background or border to make it invisible */
+}
+.smaller-rectangle {
+  margin-bottom: 0;
+  flex-grow: 0;
+  position: flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+  width: 100%;
+}
+#new-button {
+  padding: 15px 30px; /* Increase padding for a larger button */
+  font-size: 18px; /* Increase font size for larger text */
+  border-radius: 10px; /* Optional: Increase border-radius for a more rounded look */
+  width: 70%; /* You can also set a specific width if needed */
+  cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+  color: #fff;
+  background-color: #36505f;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.4); /* Text color */
+  border: none; /* No border */
+  margin-top: 5px; /* Adjust the space above the button as needed */
+  margin-bottom: auto; /* Keeps the button close to the smaller-rectangle */
+  align-self: center; /* Center the button horizontally within the vertical stack */
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.4);
+}
+#new-button:hover {
+  color: black;
+  font-weight: 400;
+  background-color: rgba(74, 140, 171, 0.64);
+}
+#custom-upload-btn {
+  margin-top: 0px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 400;
+  background-color: #36505f;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  color: #fff;
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.4);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+#custom-upload-btn:hover {
+  color: black;
+  font-weight: 400;
+  background-color: rgba(74, 140, 171, 0.64);
+}
+#image-preview-container {
+  display: flex; /* Align children (images) in a row */
+  justify-content: start; /* Align images to the start of the container */
+  gap: 10px; /* Space between images */
+  margin-top: 10px; /* Space above the first image */
+  flex-wrap: wrap; /* Allow images to wrap to next line if needed */
+}
+
+#image-preview-container img {
+  max-width: 500px; /* Adjust the size as needed */
+  max-height: 500px;
+  display: block; /* Display each image on a new line */
+}
+
+.file-drop-area:hover {
+  background-color: #e9f5ff; /* Light blue background on hover to indicate an action */
+}
+/* Style for the header inside the rectangle */
+.rectangle-header {
+  margin-bottom: 1em;
+  font-weight: bold; /* Spacing below the header */
+}
+/* Style for the big textarea */
+textarea.big-textarea {
+  font-family: Arial, sans-serif;
+  flex-grow: 1; /* Allows the textarea to take up all available space */
+  padding: 10px; /* Padding inside the textarea */
+  box-sizing: border-box; /* This ensures padding is included in width and height */
+  border: 1px solid #ccc; /* Light border for the textarea */
+  resize: none; /* Prevents the textarea from being resizable */
+}

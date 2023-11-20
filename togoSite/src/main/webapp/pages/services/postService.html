@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create a service</title>
+  <link rel="stylesheet" href="postService.css" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../login.css" />
+</head>
+<body>
+
+<!-- Where the POPUP is!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+<div class="popup" id="popup" style="z-index: 1000;">
+  <div class="container" id="container">
+    <div class="top-right-button" onclick="closePopup()">X</div>
+    <div class="form-container sign-up-container">
+      <form action="#">
+        <h1>Create Account</h1>
+        <input type="text" placeholder="Name" />
+        <input type="email" placeholder="Email" />
+        <div style="display: flex; width: 100%;">
+          <input id="password" type="password" placeholder="Password" />
+          <i class="far fa-eye" id="togglePassword" style="margin-left: -35px; cursor: pointer; padding: 12px 15px; margin: 8px 0; background-color: #eee;"></i>
+        </div>
+        <div style="display: flex; width: 100%;">
+          <input id="passwordC" type="password" placeholder="Confirm Password" /><br>
+          <i class="far fa-eye" id="togglePasswordC" style="margin-left: -35px; cursor: pointer; padding: 12px 15px; margin: 8px 0; background-color: #eee;"></i>
+        </div><br>
+        <button>Sign Up</button>
+      </form>
+    </div>
+    <div class="form-container sign-in-container">
+      <form action="#">
+        <h1>Sign in</h1>
+        <input type="email" placeholder="Email" />
+        <div style="display: flex; width: 100%;">
+          <input id="passwordL" type="password" placeholder="Password" />
+          <i class="far fa-eye" id="togglePasswordL" style="margin-left: -35px; cursor: pointer; padding: 12px 15px; margin: 8px 0; background-color: #eee;"></i>
+        </div><br>
+        <button>Sign In</button>
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>Welcome Back!</h1>
+          <p>To keep connected with us please login with your personal info</p>
+          <button class="ghost" id="signIn">Sign In</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>Hello, Friend!</h1>
+          <p>Don't have an account?<br>Enter your personal details and start journey with us</p>
+          <button class="ghost" id="signUp">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Where the POPUP is!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+
+<nav>
+  <div class="logo" style="cursor: pointer;" onclick="window.location.href = '/pages/mainPage.html'">TOGO<b>.</b></div>
+  <ul class="navItems">
+    <li><a style="cursor: pointer;" onclick="window.location.href = '/pages/mainPage.html'">Home</a></li>
+    <li><a style="cursor: pointer;" onclick="window.location.href = '/pages/adoptionPage.html'">Adoption</a></li>
+    <li><a style="cursor: pointer;" onclick="window.location.href = '/pages/servicesPage.html'">Services</a></li>
+    <li><a style="cursor: pointer;" onclick="window.location.href = '/pages/forumPage.html'">Forum</a></li>
+    <li class="login">
+      <button onclick="openPopup(); container.classList.remove('right-panel-active');">
+        <span class="links_name">Login/Register</span>
+      </button>
+    </li>
+  </ul>
+</nav>
+<form id="options-form" enctype="multipart/form-data">
+  <div class="rectangle-container">
+    <div class="rectangle" style="margin-left: 18%;">
+      <label for="type">Type of Service</label>
+      <select id="type" name="type" required>
+        <option value="Pet Sitting">Pet sitting</option>
+        <option value="Pet Walking">Pet walking</option>
+      </select>
+      <label for="location">Location:</label>
+      <select id="location" name="location" required>
+        <option value="North">North</option>
+        <option value="South">South</option>
+        <option value="East">East</option>
+        <option value="West">West</option>
+      </select>
+      <div class="price-container" >
+        <label for="price-text">Price:  </label>
+        <input
+                type="text"
+                id="price-text"
+                name="priceText"
+                placeholder="Enter price"
+                pattern="\d*"
+                inputmode="numeric"
+                oninput="this.setCustomValidity('')"
+                oninvalid="this.setCustomValidity('Please enter a valid price (numbers only)')"
+                required
+        />
+
+        <select id="price-option" name="priceOption"  required>
+          <option value="Hour">Per Hour</option>
+          <option value="Day">Per Day</option>
+        </select>
+      </div>
+      <fieldset>
+        <legend>Pet species (choose any)</legend>
+        <label>
+          <input type="checkbox" name="species" value="Cats" /> Cat
+        </label>
+        <label>
+          <input type="checkbox" name="species" value="Dogs" /> Dog
+        </label>
+        <label>
+          <input type="checkbox" name="species" value="Birds" /> Bird
+        </label>
+        <label>
+          <input type="checkbox" name="species" value="Reptiles" /> Reptile
+        </label>
+      </fieldset>
+      <div class="rectangle-header">Description</div>
+      <textarea class="big-textarea" id="description" name= "description" rows="8" placeholder="Add a description"  required></textarea>
+      <label for="contact">Contact:</label>
+      <textarea id="contact" name="contact" rows="3" placeholder="Your contact details" required></textarea>
+    </div>
+    <div style="margin-right: 18%; width: 30%; height: 100%;">
+      <div class="rectangle smaller-rectangle">
+        <div class="rectangle-header">Upload Photos</div>
+        <div id="image-preview-container" style="margin-left: 2%;"></div>
+        <br><br>
+        <input id="file-upload" type="file" name="file-upload" accept="image/*" multiple required style="display: none;" />
+        <button type="button" id="custom-upload-btn">Browse files</button>
+        <br>
+      </div>
+    </div>
+  </div>
+  <button type="submit" id="new-button" style="align-self: center; margin-top: 20px; width: 40%; margin-left: 30%;" onclick="on();">Create Service</button>
+</form>
+<br><br>
+<div class="last" style="justify-content: center; align-items: center; text-align: center;">
+  <br>
+  <span style="font-weight: 700; font-size: 20px; color: rgb(221, 218, 208); cursor: pointer;" onclick="window.open('https://startupipm.web.app/', '_blank');"
+  >©ARTEMIS2023</span>
+</div>
+
+<div id="overlay" onclick="off()">
+  <div id="textover">
+    DEMO<br />This is only a prototype, you can't add a service on the platform<br />Sorry for the inconvenience
+  </div>
+</div>
+
+</body>
+</html>
+<script>
+
+document.getElementById('custom-upload-btn').addEventListener('click', function() {
+    document.getElementById('file-upload').click(); // Trigger the file input dialog
+});
+
+document.getElementById('file-upload').addEventListener('change', function(event) {
+    const imagePreviewContainer = document.getElementById('image-preview-container');
+    imagePreviewContainer.innerHTML = ''; // Clear existing previews
+
+    for (const file of event.target.files) {
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                imagePreviewContainer.appendChild(img); // Add to the preview container
+            };
+            reader.readAsDataURL(file); // Read the file as a Data URL
+        }
+    }
+});
+
+window.addEventListener('load', function() {
+    document.getElementById('options-form').reset();
+  });
+  // This function will handle the form submission
+  function handleFormSubmit(event) {
+    // Prevent the default form submission behavior
+  event.preventDefault();
+
+  // Get all the form data
+  const formData = new FormData(event.target);
+  const species = [];
+  formData.getAll('species').forEach(item => species.push(item));
+
+  if (species.length === 0) {
+    alert('Please select at least one species.');
+    return; // Stop the function here
+  }
+
+  const service = {
+    type: formData.get('type'),
+    location: formData.get('location'),
+    priceText: formData.get('priceText'),
+    priceOption: formData.get('priceOption'),
+    species: species.join(', '), // Join the species array into a comma-separated string
+    contact: formData.get('contact'),
+    description: formData.get('description'),
+    // File handling remains the same
+  };
+
+  if (species.length === 0) {
+    alert('Please select at least one species.');
+    return; // Stop the function here
+  }
+
+    const services = JSON.parse(localStorage.getItem('services')) || [];
+   // services.length = 0; // REMOVE THIS
+  services.push(service);
+    // Convert the serviceData object into a string to store in localStorage
+    const serviceDataString = JSON.stringify(service);
+
+    // Store the service data in localStorage
+   // localStorage.setItem('serviceData', serviceDataString);
+    console.log(serviceDataString);
+
+    localStorage.setItem('services', JSON.stringify(services));
+
+    // Optionally, you can redirect the user or display a success message here
+   // alert('Service created!');
+    window.location.href = 'services.html';
+  }
+
+  // Add the event listener to the form
+  document
+    .getElementById('options-form')
+    .addEventListener('submit', handleFormSubmit);
+
+    let popup = document.getElementById("popup");
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+
+    signUpButton.addEventListener('click', () => {
+	    container.classList.add("right-panel-active");
+    });
+
+    signInButton.addEventListener('click', () => {
+	    container.classList.remove("right-panel-active");
+    });
+
+    function openPopup() {
+        popup.classList.toggle("open-popup");
+    }
+
+    function closePopup() {
+        popup.classList.remove("open-popup");
+    }
+
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        this.parentElement.classList.toggle("active");
+
+        var pannel = this.nextElementSibling;
+
+        if (pannel.style.display === "block") {
+          pannel.style.display = "none";
+        } else {
+          pannel.style.display = "block";
+        }
+      });
+    }
+
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+
+    togglePassword.addEventListener('click', function (e) {
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+    });
+
+    const togglePassword2 = document.querySelector('#togglePasswordC');
+    const password2 = document.querySelector('#passwordC');
+
+    togglePassword2.addEventListener('click', function (e) {
+        const type = password2.getAttribute('type') === 'password' ? 'text' : 'passwordC';
+        password2.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+    });
+
+    const togglePassword3 = document.querySelector('#togglePasswordL');
+    const password3 = document.querySelector('#passwordL');
+
+    togglePassword3.addEventListener('click', function (e) {
+        const type = password3.getAttribute('type') === 'password' ? 'text' : 'passwordL';
+        password3.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+    });
+
+    function on() {
+            document.getElementById("overlay").style.display = "block";
+      }
+
+      function off() {
+        document.getElementById("overlay").style.display = "none";
+      }
+</script>
