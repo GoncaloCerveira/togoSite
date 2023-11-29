@@ -29,7 +29,7 @@
                 <li><a style="cursor: pointer;" onclick="window.location.href = 'services/services.html'">Services</a></li>
                 <li><a style="cursor: pointer;" onclick="window.location.href = 'forum/forumPage.html'">Forum</a></li>
                 <li class="login">
-                    <button onclick="openPopup(); container.classList.remove('right-panel-active');">
+                    <button onclick="openPopup(); container.classList.remove('right-panel-active'); loginButton();">
                         <span class="links_name">Login/Register</span>
                     </button>
                 </li>
@@ -190,6 +190,14 @@
         >©ARTEMIS2023</span>
     </div>
 
+    <!-- Login Menu!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+    <div class="popup" id="popupLogin" style="width: 20%; height: 40%;">
+        <div class="top-right-button" onclick="closePopupLogin()">X</div>
+        <button style="margin-top: 15%;" onclick="on();">My Account</button>
+        <button style="margin-top: 10%;" onclick="on();">Privacy Set </button>
+        <button style="margin-top: 10%;" onclick="userSignOut();">Log Out</button>
+    </div>
+    <!-- Where Login Menu it ends!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
 
     <!-- Where the POPUP is!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
     <div class="popup" id="popup">
@@ -283,6 +291,7 @@
                 const user = userCredential.user;
                 console.log(user);
                 alert("Your account has been created!");
+                closePopup();
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -298,6 +307,7 @@
             .then((userCredential) => {
                 const user = userCredential.user;
                 alert("You have signed in successfully!");
+                closePopup();
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -319,6 +329,7 @@
 
         const userSignOut = async() => {
             await signOut(auth);
+            linkElement.innerText = 'Login/Register';
         }
 
         checkAuthState();
@@ -328,6 +339,7 @@
 </script>
 <script>
     let popup = document.getElementById("popup");
+    let popupLogin = document.getElementById("popupLogin");
     const signUpButton = document.getElementById('signUp');
     const signInButton = document.getElementById('signIn');
     const container = document.getElementById('container');
@@ -344,10 +356,17 @@
         var linkElement = document.querySelector('.links_name');
         if(linkElement.innerText === 'Login/Register')
             popup.classList.toggle("open-popup");
+        else{
+            popupLogin.classList.toggle("open-popup");
+        }
     }
 
     function closePopup() {
         popup.classList.remove("open-popup");
+    }
+
+    function closePopupLogin() {
+        popupLogin.classList.remove("open-popup");
     }
 
     var acc = document.getElementsByClassName("accordion");
