@@ -114,8 +114,7 @@
                 placeholder="Enter price"
                 pattern="\d*"
                 inputmode="numeric"
-                oninput="this.setCustomValidity('')"
-                oninvalid="this.setCustomValidity('Please enter a valid price (numbers only)')"
+                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                 required
         />
 
