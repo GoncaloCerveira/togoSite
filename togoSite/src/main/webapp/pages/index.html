@@ -195,7 +195,7 @@
         <div class="top-right-button" onclick="closePopupLogin()">X</div>
         <button style="margin-top: 15%;" onclick="on();">My Account</button>
         <button style="margin-top: 10%;" onclick="on();">Privacy Set </button>
-        <button style="margin-top: 10%;" onclick="userSignOut();">Log Out</button>
+        <button id="signOutButton" style="margin-top: 10%;">Log Out</button>
     </div>
     <!-- Where Login Menu it ends!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
 
@@ -328,14 +328,18 @@
         }
 
         const userSignOut = async() => {
+            var linkElement = document.querySelector('.links_name');
             await signOut(auth);
             linkElement.innerText = 'Login/Register';
+            alert("You have logged out successfully!");
+            closePopupLogin();
         }
 
         checkAuthState();
 
         signUpButton2.addEventListener('click', userSignUp);
         signInButton2.addEventListener('click', userSignIn);
+        signOutButton.addEventListener('click', userSignOut);
 </script>
 <script>
     let popup = document.getElementById("popup");
