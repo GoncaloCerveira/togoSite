@@ -172,3 +172,11 @@ function filterByBreed() {
         password3.setAttribute('type', type);
         this.classList.toggle('fa-eye-slash');
     });
+
+    function on() {
+        document.getElementById('overlay').style.display = 'block';
+    }
+
+    function off() {
+        document.getElementById('overlay').style.display = 'none';
+    }

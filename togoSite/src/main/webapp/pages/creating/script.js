@@ -20,6 +20,7 @@
     const signUpButton = document.getElementById('signUp');
     const signInButton = document.getElementById('signIn');
     const container = document.getElementById('container');
+    let popupLogin = document.getElementById("popupLogin");
 
     signUpButton.addEventListener('click', () => {
       container.classList.add('right-panel-active');
@@ -41,10 +42,17 @@
       var linkElement = document.querySelector('.links_name');
       if(linkElement.innerText === 'Login/Register')
         popup.classList.toggle("open-popup");
+      else{
+        popupLogin.classList.toggle("open-popup");
+      }
     }
 
     function closePopup() {
       popup.classList.remove('open-popup');
+    }
+
+    function closePopupLogin() {
+        popupLogin.classList.remove("open-popup");
     }
 
     const togglePassword = document.querySelector('#togglePassword');
@@ -81,8 +89,16 @@
       document.getElementById('overlay').style.display = 'block';
     }
 
+    function on2() {
+        document.getElementById('overlay2').style.display = 'block';
+    }
+
     function off() {
       document.getElementById('overlay').style.display = 'none';
+    }
+
+    function off2() {
+        document.getElementById('overlay2').style.display = 'none';
     }
 
     function clearInputs() {
