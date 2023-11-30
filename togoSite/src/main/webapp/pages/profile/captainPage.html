@@ -136,6 +136,16 @@
     >©ARTEMIS2023</span>
 </div>
 
+<!-- Login Menu!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+<div class="popup" id="popupLogin" style="width: 20%; height: 40%;">
+    <div class="top-right-button" onclick="closePopupLogin()">X</div>
+    <button style="margin-top: 15%;" onclick="on2();">My Account</button>
+    <button style="margin-top: 10%;" onclick="on2();">Privacy Set </button>
+    <button id="signOutButton" style="margin-top: 10%;">Log Out</button>
+</div>
+<!-- Where Login Menu it ends!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+
 <!-- Where the POPUP is!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
 <div class="popup" id="popup">
     <div class="container" id="container">
@@ -190,6 +200,11 @@
         DEMO<br />This is only a prototype, you can't contact a user that does not exist<br />Sorry for the inconvenience
     </div>
 </div>
+
+<div id="overlay2" onclick="off2()" style="z-index: 10000;">
+    <div id="textover2">DEMO<br>This is only a prototype, the button doesn´t belong to a scenario<br>Sorry for the inconvenience</div>
+</div>
+
 </body>
 </html>
 
@@ -224,20 +239,30 @@
     const signInButton2 = document.querySelector("#signInButton2");
 
     const userSignUp = async() => {
-        const email = document.getElementById('emailR').value;
-        const password = document.getElementById('password').value;
-        createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                const user = userCredential.user;
-                console.log(user);
-                alert("Your account has been created!");
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log(errorCode + errorMessage)
-            })
-    }
+            const email = document.getElementById('emailR').value;
+            const password = document.getElementById('password').value;
+            const confirmation = document.getElementById('passwordC').value;
+
+            if(password !== confirmation) {
+                alert("Passwords do not match.");
+            } else if(password.length < 6) {
+                alert("Password should be at least 6 characters");
+            } else {
+                createUserWithEmailAndPassword(auth, email, password)
+                    .then((userCredential) => {
+                        const user = userCredential.user;
+                        console.log(user);
+                        alert("Your account has been created!");
+                        closePopup();
+                    })
+                    .catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        console.log(errorCode + errorMessage)
+                        alert(errorCode)
+                    })
+            }
+        }
 
     const userSignIn = async() => {
         const email = document.getElementById('emailL').value;
@@ -246,6 +271,7 @@
             .then((userCredential) => {
                 const user = userCredential.user;
                 alert("You have signed in successfully!");
+                closePopup();
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -266,13 +292,18 @@
     }
 
     const userSignOut = async() => {
+        var linkElement = document.querySelector('.links_name');
         await signOut(auth);
+        linkElement.innerText = 'Login/Register';
+        alert("You have logged out successfully!");
+        closePopupLogin();
     }
 
     checkAuthState();
 
     signUpButton2.addEventListener('click', userSignUp);
     signInButton2.addEventListener('click', userSignIn);
+    signOutButton.addEventListener('click', userSignOut);
 </script>
 
 <script src="script.js"></script>
