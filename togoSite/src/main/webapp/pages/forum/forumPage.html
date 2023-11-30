@@ -657,21 +657,30 @@
     const signInButton2 = document.querySelector("#signInButton2");
 
     const userSignUp = async() => {
-        const email = document.getElementById('emailR').value;
-        const password = document.getElementById('password').value;
-        createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                const user = userCredential.user;
-                console.log(user);
-                alert("Your account has been created!");
-                closePopup();
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log(errorCode + errorMessage)
-            })
-    }
+            const email = document.getElementById('emailR').value;
+            const password = document.getElementById('password').value;
+            const confirmation = document.getElementById('passwordC').value;
+
+            if(password !== confirmation) {
+                alert("Passwords do not match.");
+            } else if(password.length < 6) {
+                alert("Password should be at least 6 characters");
+            } else {
+                createUserWithEmailAndPassword(auth, email, password)
+                    .then((userCredential) => {
+                        const user = userCredential.user;
+                        console.log(user);
+                        alert("Your account has been created!");
+                        closePopup();
+                    })
+                    .catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        console.log(errorCode + errorMessage)
+                        alert(errorCode)
+                    })
+            }
+        }
 
     const userSignIn = async() => {
         const email = document.getElementById('emailL').value;
