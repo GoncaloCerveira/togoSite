@@ -1,6 +1,7 @@
 
 function submitForm() {
     var cards = document.querySelectorAll(".flip-card");
+    var resultsFound = false;
 
     cards.forEach(function(card) {
         card.style.display = "block";
@@ -11,6 +12,17 @@ function submitForm() {
     filterBySize();
     filterByLocation();
     filterByBreed();
+
+
+    cards.forEach(function(card) {
+        if (card.style.display === "block") {
+            resultsFound = true;
+        }
+    });
+
+    if (!resultsFound) {
+        alert("No results found.");
+    }
 }
 
 function filterBySpecies() {
