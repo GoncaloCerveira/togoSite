@@ -12,6 +12,16 @@
 </head>
 <body>
 
+<!-- Login Menu!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+<div class="popup" id="popupLogin" style="width: 20%; height: 40%;">
+  <div class="top-right-button" onclick="closePopupLogin()">X</div>
+  <button style="margin-top: 15%;" onclick="on();">My Account</button>
+  <button style="margin-top: 10%;" onclick="on();">Privacy Set </button>
+  <button id="signOutButton" style="margin-top: 10%;">Log Out</button>
+</div>
+<!-- Where Login Menu it ends!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+
 <!-- Where the POPUP is!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
 <div class="popup" id="popup">
   <div class="container" id="container">
@@ -219,6 +229,10 @@
   >©ARTEMIS2023</span>
 </div>
 
+<div id="overlay" onclick="off()" style="z-index: 10000;">
+  <div id="textover">DEMO<br>This is only a prototype, the button doesn´t belong to a scenario<br>Sorry for the inconvenience</div>
+</div>
+
 </body>
 
 <script type="module">
@@ -259,6 +273,7 @@
               const user = userCredential.user;
               console.log(user);
               alert("Your account has been created!");
+              closePopup();
             })
             .catch((error) => {
               const errorCode = error.code;
@@ -274,6 +289,7 @@
             .then((userCredential) => {
               const user = userCredential.user;
               alert("You have signed in successfully!");
+              closePopup();
             })
             .catch((error) => {
               const errorCode = error.code;
@@ -294,13 +310,18 @@
   }
 
   const userSignOut = async() => {
+    var linkElement = document.querySelector('.links_name');
     await signOut(auth);
+    linkElement.innerText = 'Login/Register';
+    alert("You have logged out successfully!");
+    closePopupLogin();
   }
 
   checkAuthState();
 
   signUpButton2.addEventListener('click', userSignUp);
   signInButton2.addEventListener('click', userSignIn);
+  signOutButton.addEventListener('click', userSignOut);
 </script>
 
 <script>
@@ -451,6 +472,7 @@ document.getElementById('filter-pet-walking').addEventListener('change', filterS
     const signUpButton = document.getElementById('signUp');
     const signInButton = document.getElementById('signIn');
     const container = document.getElementById('container');
+    let popupLogin = document.getElementById("popupLogin");
 
     signUpButton.addEventListener('click', () => {
 	    container.classList.add("right-panel-active");
@@ -464,12 +486,18 @@ document.getElementById('filter-pet-walking').addEventListener('change', filterS
       var linkElement = document.querySelector('.links_name');
       if(linkElement.innerText === 'Login/Register')
         popup.classList.toggle("open-popup");
+      else{
+            popupLogin.classList.toggle("open-popup");
+        }
     }
 
     function closePopup() {
         popup.classList.remove("open-popup");
     }
 
+    function closePopupLogin() {
+        popupLogin.classList.remove("open-popup");
+    }
     var acc = document.getElementsByClassName("accordion");
     var i;
 
@@ -514,6 +542,14 @@ document.getElementById('filter-pet-walking').addEventListener('change', filterS
         password3.setAttribute('type', type);
         this.classList.toggle('fa-eye-slash');
     });
+
+    function on() {
+        document.getElementById("overlay").style.display = "block";
+      }
+
+    function off() {
+        document.getElementById("overlay").style.display = "none";
+    }
 
 </script>
 </html>
