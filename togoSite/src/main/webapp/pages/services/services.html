@@ -327,9 +327,10 @@
 <script>
   function filterServices() {
     var services = document.querySelectorAll('.service-item');
+    var resultsFound = false;
 
     services.forEach(function(service) {
-        service.style.display = ''; // hide the service
+        service.style.display = '';
     });
     filterServicesBird()
     filterServicesDog()
@@ -337,6 +338,16 @@
     filterServicesReptile()
     filterServicesByType()
     filterServicesByLocation()
+
+    services.forEach(function(card) {
+      if (card.style.display === '') {
+        resultsFound = true;
+      }
+    });
+
+    if (!resultsFound) {
+      alert("No results found.");
+    }
   }
 
     // This function would be called whenever the dog checkbox is toggled
