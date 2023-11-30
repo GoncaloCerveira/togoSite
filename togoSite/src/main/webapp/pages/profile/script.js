@@ -31,9 +31,7 @@ var slideIndex = 1;
   }
 
   function contactOwner() {
-    // Placeholder for your contact logic
     alert("Thank you for your interest in Buddy! I'll be in touch shortly.");
-    // Replace the above line with your actual contact logic
   }
 
   let popup = document.getElementById('popup');
@@ -41,6 +39,7 @@ var slideIndex = 1;
     const signUpButton = document.getElementById('signUp');
     const signInButton = document.getElementById('signIn');
     const container = document.getElementById('container');
+    let popupLogin = document.getElementById("popupLogin");
 
     signUpButton.addEventListener('click', () => {
       container.classList.add('right-panel-active');
@@ -48,6 +47,10 @@ var slideIndex = 1;
 
     function closePopup() {
       popup.classList.remove('open-popup');
+    }
+
+    function closePopupLogin() {
+        popupLogin.classList.remove("open-popup");
     }
 
     signInButton.addEventListener('click', () => {
@@ -58,7 +61,37 @@ var slideIndex = 1;
       var linkElement = document.querySelector('.links_name');
       if(linkElement.innerText === 'Login/Register')
         popup.classList.toggle("open-popup");
+      else{
+        popupLogin.classList.toggle("open-popup");
+      }
     }
+
+    const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+
+        togglePassword.addEventListener('click', function (e) {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+
+        const togglePassword2 = document.querySelector('#togglePasswordC');
+        const password2 = document.querySelector('#passwordC');
+
+        togglePassword2.addEventListener('click', function (e) {
+            const type = password2.getAttribute('type') === 'password' ? 'text' : 'passwordC';
+            password2.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+
+        const togglePassword3 = document.querySelector('#togglePasswordL');
+        const password3 = document.querySelector('#passwordL');
+
+        togglePassword3.addEventListener('click', function (e) {
+            const type = password3.getAttribute('type') === 'password' ? 'text' : 'passwordL';
+            password3.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
 
     function on() {
         document.getElementById("overlay").style.display = "block";
@@ -66,4 +99,12 @@ var slideIndex = 1;
 
     function off() {
         document.getElementById("overlay").style.display = "none";
+    }
+
+    function on2() {
+        document.getElementById("overlay2").style.display = "block";
+    }
+
+    function off2() {
+        document.getElementById("overlay2").style.display = "none";
     }
