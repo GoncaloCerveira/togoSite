@@ -127,7 +127,7 @@
                 <div style="color: black; text-align: center; font-size: 50px; display: inline-block">1M</div>
                 <div style="color: black; text-align: center; font-size: 40px; display: inline-block">&nbsp;<i class='bx bxl-github' ></i></i></div>
                 <hr style="width:80%; color: #f3f5f8; margin-left: 20px;">
-                <div class="title" style="text-align: center; font-weight: 600; margin-top: 2%;">Pets adopted annualy</div>
+                <div class="title" style="text-align: center; font-weight: 600; margin-top: 2%;">Pets adopted annually</div>
             </div>
             <div class="form" style="width: 18%; text-align: center;">
                 <div style="color: black; text-align: center; font-size: 50px; display: inline-block">2M</div>
@@ -143,7 +143,7 @@
             </div>
         </div>
     </div>
-    <div class="containerFaq">
+    <div class="containerFaq" id="faqContainer">
         <div class="wrapper">
             <br><br><h1>FAQ (Frequently Asked Questions)</h1><br>
             <div class="faq">
@@ -162,7 +162,7 @@
                 </div>
             </div>
             <div class="faq">
-                <button class="accordion">Does TOGO have all animals for adopt?<i class="fa-solid fa-chevron-down"></i></button>
+                <button class="accordion">Does TOGO have all animals for adoption?<i class="fa-solid fa-chevron-down"></i></button>
                 <div class="pannel">
                     <hr style="width:100%; background-color: black; height: 4px;"><br>
                     <p>Based on the law, TOGO can´t have certain types of animal</p>
@@ -434,5 +434,23 @@
     function off() {
         document.getElementById("overlay").style.display = "none";
     }
+
+    const accordionButtons = document.querySelectorAll('.accordion');
+
+    accordionButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const panel = this.nextElementSibling;
+
+            panel.classList.toggle('active');
+
+            const faqContainer = document.getElementById('faqContainer');
+
+            if (panel.classList.contains('active')) {
+                faqContainer.style.height = (faqContainer.offsetHeight + 100) + 'px';
+            } else {
+                faqContainer.style.height = (faqContainer.offsetHeight - 100) + 'px';
+            }
+        });
+    });
 </script>
 </html>
