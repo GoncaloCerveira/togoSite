@@ -20,7 +20,7 @@
             <li><a style="cursor: pointer;" onclick="window.location.href = '../services/services.html'">Services</a></li>
             <li><a style="cursor: pointer;" onclick="window.location.href = '../forum/forumPage.html'">Forum</a></li>
             <li class="login">
-                <button class="loginbtn" onclick="openPopup(); container.classList.remove('right-panel-active');">
+                <button class="loginbtn" onclick="openPopup(); container.classList.remove('right-panel-active'); loginButton();">
                     <span class="links_name">Login/Register</span>
                 </button>
             </li>
@@ -360,6 +360,15 @@
         >©ARTEMIS2023</span>
     </div>
 
+    <!-- Login Menu!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+    <div class="popup" id="popupLogin" style="width: 20%; height: 40%;">
+        <div class="top-right-button" onclick="closePopupLogin()">X</div>
+        <button style="margin-top: 15%;" onclick="on();">My Account</button>
+        <button style="margin-top: 10%;" onclick="on();">Privacy Set </button>
+        <button id="signOutButton" style="margin-top: 10%;">Log Out</button>
+    </div>
+    <!-- Where Login Menu it ends!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
     <!-- Where the POPUP is!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
     <div class="popup" id="popup">
         <div class="container" id="container">
@@ -408,6 +417,11 @@
         </div>
     </div>
     <!-- Where the POPUP is!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+    <div id="overlay" onclick="off()" style="z-index: 10000;">
+        <div id="textover">DEMO<br>This is only a prototype, the button doesn´t belong to a scenario<br>Sorry for the inconvenience</div>
+    </div>
+
 </div>
 </body>
 <script type="module">
@@ -448,6 +462,7 @@
                 const user = userCredential.user;
                 console.log(user);
                 alert("Your account has been created!");
+                closePopup();
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -463,6 +478,7 @@
             .then((userCredential) => {
                 const user = userCredential.user;
                 alert("You have signed in successfully!");
+                closePopup();
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -483,13 +499,18 @@
     }
 
     const userSignOut = async() => {
+        var linkElement = document.querySelector('.links_name');
         await signOut(auth);
+        linkElement.innerText = 'Login/Register';
+        alert("You have logged out successfully!");
+        closePopupLogin();
     }
 
     checkAuthState();
 
     signUpButton2.addEventListener('click', userSignUp);
     signInButton2.addEventListener('click', userSignIn);
+    signOutButton.addEventListener('click', userSignOut);
 </script>
 <script src="adoption.js"></script>
 </html>
